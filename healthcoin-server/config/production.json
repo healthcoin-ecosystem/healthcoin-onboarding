@@ -1,0 +1,14 @@
+{
+	"host": "healthcoin-server",
+	"port": 80,
+	"mongodb": "DATABASE_URL",
+	"public": "../public/",
+	"auth": {
+		"token": {
+			"secret": "FEATHERS_AUTH_SECRET"
+		},
+		"local": {
+			"session": true
+		}
+	}
+}

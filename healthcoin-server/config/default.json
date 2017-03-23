@@ -1,0 +1,14 @@
+{
+	"host": "localhost",
+	"port": 9000,
+	"mongodb": "mongodb://localhost:27017/healthcoin_dev",
+	"public": "../public/",
+	"auth": {
+		"token": {
+			"secret": "Ygu6RqIsMW6vQH62xCO36KxFI9GXwj/oWtW1iEKPOoW+00Q/2SjTNVII5vI+r4KWUT6JgMRaM1shRx35kUtEKA=="
+		},
+		"local": {
+			"session": true
+		}
+	}
+}
