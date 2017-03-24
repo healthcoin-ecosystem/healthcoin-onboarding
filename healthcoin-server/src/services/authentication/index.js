@@ -1,5 +1,5 @@
 
-const config = require('../../config');
+const config = require('config');
 const authentication = require('feathers-authentication');
 
 module.exports = function () {

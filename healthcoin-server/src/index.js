@@ -1,5 +1,6 @@
 
-const config = require('./config');
+const config = require('config');
+
 const app = require('./app');
 
 const host = config.get('host');

@@ -1,6 +1,7 @@
 
 const path = require('path');
 
+const config = require('config');
 const serveStatic = require('feathers').static;
 const favicon = require('serve-favicon');
 const compression = require('compression');
@@ -10,7 +11,6 @@ const rest = require('feathers-rest');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const config = require ('./config');
 const middleware = require('./middleware');
 const services = require('./services');
 
