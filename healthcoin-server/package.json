@@ -28,9 +28,9 @@
     "feathers-mongoose": "^3.6.2",
     "feathers-rest": "^1.7.1",
     "mongoose": "^4.9.1",
+    "morgan": "~1.7.0",
     "passport": "^0.3.2",
-    "serve-favicon": "^2.4.1",
-    "winston": "^2.3.1"
+    "serve-favicon": "^2.4.1"
   },
   "devDependencies": {
     "jshint": "^2.9.4",
