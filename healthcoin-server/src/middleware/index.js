@@ -9,6 +9,7 @@ module.exports = function () {
 	// handling middleware should go last.
 	const app = this;
 
+	app.post('/signup', signup(app));
 	app.use(notFound());
 	app.use(consoleError());
 	app.use(errors());

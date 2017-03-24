@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Healthcoin - Sign Up</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.css"/>
+		<style>
+			body { background: rgba(247, 247, 247, 1.0); }
+			body > .grid { height: 100%; }
+			body > .grid > .column { max-width: 450px; margin-top: -128px; }
+		</style>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+	</head>
+	<body>
+		<main class="ui middle aligned center aligned grid">
+			<div class="column">
+				<img src="https://healthcoin.com/wallet/images/Icon.png" style="width:128px; height:128px;"/>
+				<h1 class="ui teal header">Healthcoin - Sign Up</h1>
+				<form class="ui form" method="POST" action="/signup" style="text-align:left;">
+					<div class="field">
+						<label>First Name</label>
+						<input name="firstname" placeholder="First Name" autofocus/>
+					</div>
+					<div class="field">
+						<label>Last Name</label>
+						<input name="lastname" placeholder="Last Name"/>
+					</div>
+					<div class="field">
+						<label>Email</label>
+						<input type="email" name="email" placeholder="Email"/>
+					</div>
+					<div class="field">
+						<label>Password</label>
+						<input type="password" name="password" placeholder="Password"/>
+					</div>
+					<div class="field">
+						<label>Confirm Password</label>
+						<input type="password" name="confirmpassword" placeholder="Confirm Password"/>
+					</div>
+					<div class="field">
+						<div class="g-recaptcha" data-sitekey="6LefJhoUAAAAAAtiMe3bqtyaSOrHXiIt_vXfMRSc"></div>
+					</div>
+					<div class="field" style="text-align:center;">
+						<button class="ui violet button" type="submit">Sign Up</button>
+					</div>
+				</form>
+				<div class="ui relaxed list">
+					<div class="item"><a href="/login.html">Already have an account?</a></div>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.js"></script>
+		<script>
+			$(function () {
+			});
+		</script>
+	</body>
+</html>
