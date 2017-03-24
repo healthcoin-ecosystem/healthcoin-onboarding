@@ -5,23 +5,21 @@ const serveStatic = require('feathers').static;
 const favicon = require('serve-favicon');
 const compression = require('compression');
 const feathers = require('feathers');
-const configuration = require('feathers-configuration');
 const hooks = require('feathers-hooks');
 const rest = require('feathers-rest');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
+const config = require ('./config');
 const middleware = require('./middleware');
 const services = require('./services');
 
 const app = feathers();
 
-app.configure(configuration(path.join(__dirname, '..')));
-
 app.use(compression());
 app.use(morgan('dev'));
-app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
-app.use('/', serveStatic(app.get('public')));
+app.use(favicon(path.join(__dirname, config.get('public'), 'favicon.ico')));
+app.use('/', serveStatic(path.join(__dirname, config.get('public'))));
 app.use('/', serveStatic(path.join(__dirname, '../node_modules/feathers-client/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

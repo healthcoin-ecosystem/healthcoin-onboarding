@@ -1,3 +1,5 @@
+
+const config = require('../config');
 const message = require('./message');
 const authentication = require('./authentication');
 const user = require('./user');
@@ -6,7 +8,7 @@ const mongoose = require('mongoose');
 module.exports = function () {
 	const app = this;
 
-	mongoose.connect(app.get('mongodb'));
+	mongoose.connect(config.get('mongodb'));
 	mongoose.Promise = global.Promise;
 
 	app.configure(authentication);

@@ -1,10 +1,11 @@
+
+const config = require('../../config');
 const authentication = require('feathers-authentication');
 
 module.exports = function () {
 	const app = this;
 
-	const config = app.get('auth');
-	const auth = authentication(config);
+	const auth = authentication(config.get('auth'));
 
 	app.configure(auth);
 };

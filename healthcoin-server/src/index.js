@@ -1,9 +1,12 @@
+
+const config = require('./config');
 const app = require('./app');
 
-const port = app.get('port');
+const host = config.get('host');
+const port = config.get('port');
 
 const server = app.listen(port);
 
 server.on('listening', () => {
-	console.log(`Healthcoin Server started on ${app.get('host')}:${port}`);
+	console.log(`Healthcoin Server started on ${host}:${port}`);
 });

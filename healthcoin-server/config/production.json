@@ -5,10 +5,9 @@
 	"public": "../public/",
 	"auth": {
 		"token": {
-			"secret": "FEATHERS_AUTH_SECRET"
+			"secret": "AUTH_TOKEN_SECRET"
 		},
 		"local": {
-			"session": true
 		}
 	}
 }
