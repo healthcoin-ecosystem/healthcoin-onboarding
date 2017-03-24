@@ -1,19 +1,27 @@
 
+const recaptcha = require('./recaptcha');
+
 module.exports = app => {
-	return function (req, res, next) {
-		const body = req.body;
+	return (req, res, next) => {
+		recaptcha.verify(req, err => {
+			if (err) {
+				return res.redirect('/signup.html');
+			}
 
-		const user = {
-			email: body.email,
-			password: body.password,
-			firstname: body.firstname,
-			lastname: body.lastname
-		};
+			const body = req.body;
 
-		app.service('users').create(user, (err, user) => {
-			if (err) { return next(err); }
+			const user = {
+				email: body.email,
+				password: body.password,
+				firstname: body.firstname,
+				lastname: body.lastname
+			};
 
-			res.redirect('/client.html');
+			app.service('users').create(user, (err, user) => {
+				if (err) { return next(err); }
+
+				res.redirect('/client.html');
+			});
 		});
 	};
 };
