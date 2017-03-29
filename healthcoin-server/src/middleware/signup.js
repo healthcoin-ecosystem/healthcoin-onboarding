@@ -23,7 +23,7 @@ module.exports = app => {
 
 				const siteUrl = getSiteUrl(req);
 
-				sendWelcomeMessage(siteUrl, user.email, err => console.error);
+				sendWelcomeMessage(app.service('messages'), user._id, user.email, siteUrl);
 
 				res.redirect('/client.html');
 			});
@@ -35,14 +35,14 @@ function getSiteUrl(req) {
 	return req.protocol + '://' + req.get('host');
 }
 
-function sendWelcomeMessage(siteUrl, email, callback) {
+function sendWelcomeMessage(messageService, userID, email, siteUrl, callback) {
 	const url = siteUrl + '/login.html';
 
 	// TODO: Email templates are coming in a future sprint, for now just hard-code
 	const message = {
 		to: email,
 		subject: 'Welcome to Healthcoin',
-		text: `Welcome to Healthcoin! Use this link to sign in: ${url}`,
+		text: `Welcome to Healthcoin! Use this link to log in: ${url}`,
 		html: `
 			<html>
 				<head></head>
@@ -56,5 +56,9 @@ function sendWelcomeMessage(siteUrl, email, callback) {
 		`
 	};
 
-	mail.send(message, callback);
+	mail.send(message, (err, message, info) => {
+		if (err) { return callback ? callback(err) : null; }
+
+		mail.store(messageService, userID, message, info, err => callback ? callback(err) : null);
+	});
 }
