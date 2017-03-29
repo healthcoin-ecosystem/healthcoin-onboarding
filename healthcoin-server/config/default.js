@@ -8,19 +8,19 @@ module.exports = {
 	public: '../public/',
 	auth: {
 		token: {
-			secret: 'AUTH_TOKEN_SECRET'
+			secret: ''
 		},
 		local: {
 		},
 		successRedirect: '/client.html'
 	},
 	recaptcha: {
-		site: 'RECAPTCHA_SITE',
-		secret: 'RECAPTCHA_SECRET'
+		site: '',
+		secret: ''
 	},
 	mail: {
-		connectionString: 'MAIL_CONNECTION_STRING',
-		connectionVerify: 'MAIL_CONNECTION_VERIFY',
-		from: 'MAIL_FROM'
+		connectionString: '',
+		connectionVerify: false,
+		from: ''
 	}
 };

@@ -1,15 +1,45 @@
 const mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
-	text: {
-		type: String,
+	userID: {
+		type: mongoose.Schema.ObjectId,
 		required: true
+	},
+	from: {
+		type: String
+	},
+	to: {
+		type: [ String ]
+	},
+	cc: {
+		type: [ String ]
+	},
+	bcc: {
+		type: [ String ]
+	},
+	subject: {
+		type: String
+	},
+	text: {
+		type: String
+	},
+	html: {
+		type: String
+	},
+	attachments: {
+		type: [ String ]
+	},
+	messageID: {
+		type: String
+	},
+	envelope: {
+		type: Object
 	},
 	created: {
 		type: Date,
 		'default': Date.now
 	},
-	updated: {
+	modified: {
 		type: Date,
 		'default': Date.now
 	}
