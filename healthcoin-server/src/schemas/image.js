@@ -1,21 +1,22 @@
 const mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
-	email: {
-		type: String,
-		required: true,
-		unique: true
-	},
-	password: {
-		type: String,
+	userID: {
+		type: mongoose.Schema.ObjectId,
 		required: true
 	},
-	firstname: {
+	filename: {
 		type: String
 	},
-	lastname: {
+	hash: {
 		type: String
 	},
+	files: [{
+		store: { type: String },
+		process: { type: String },
+		key: { type: String },
+		url: { type: String }
+	}],
 	created: {
 		type: Date,
 		'default': Date.now

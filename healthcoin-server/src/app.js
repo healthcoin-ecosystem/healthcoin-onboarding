@@ -2,7 +2,6 @@
 const path = require('path');
 
 const config = require('config');
-const serveStatic = require('feathers').static;
 const favicon = require('serve-favicon');
 const compression = require('compression');
 const feathers = require('feathers');
@@ -19,8 +18,8 @@ const app = feathers();
 app.use(compression());
 app.use(morgan('dev'));
 app.use(favicon(path.join(__dirname, config.get('public'), 'favicon.ico')));
-app.use('/', serveStatic(path.join(__dirname, config.get('public'))));
-app.use('/', serveStatic(path.join(__dirname, '../node_modules/feathers-client/dist')));
+app.use('/', feathers.static(path.join(__dirname, config.get('public'))));
+app.use('/', feathers.static(path.join(__dirname, '../node_modules/feathers-client/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.configure(hooks());
