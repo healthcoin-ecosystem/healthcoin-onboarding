@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Healthcoin - Client</title>
+		<title>Healthcoin - Image Upload</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.css"/>
 		<style>
 			body { background: rgba(247, 247, 247, 1.0); }
@@ -9,20 +9,21 @@
 	</head>
 	<body>
 		<main class="ui text container" style="padding: 5em 0em;">
-			<h1 class="ui teal header">Healthcoin - Client</h1>
-			<pre id="users" style="white-space: pre-wrap;"></pre>
+			<h1 class="ui teal header">Healthcoin - Image Upload</h1>
+			<form class="ui form" method="POST" action="/images" enctype="multipart/form-data" style="text-align:left;">
+				<div class="field">
+					<label>Image</label>
+					<input type="file" name="image" />
+				</div>
+				<div class="field" style="text-align:center;">
+					<button class="ui violet button" type="submit">Upload</button>
+				</div>
+			</form>
 		</main>
-
-		<nav>
-			<div class="ui relaxed list">
-				<div class="item"><a href="/client.html">Client Test</a></div>
-				<div class="item"><a href="/image-upload.html">Image Upload</a></div>
-			</div>
-		</nav>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.js"></script>
 		<script src="/feathers.js"></script>
-		<script src="/client.js"></script>
+		<script src="/image-upload.js"></script>
 	</body>
 </html>

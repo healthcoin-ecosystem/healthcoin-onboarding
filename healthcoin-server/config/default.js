@@ -19,8 +19,32 @@ module.exports = {
 		secret: 'RECAPTCHA_SECRET'
 	},
 	mail: {
-		connectionString: 'MAIL_CONNECTION_STRING',
-		connectionVerify: 'MAIL_CONNECTION_VERIFY',
-		from: 'MAIL_FROM'
+		connectionString: '',
+		connectionVerify: false,
+		from: ''
+	},
+	imageUpload: {
+		fileStore: {
+			path: './public/files',
+			pathMatch: '(...).*',
+			pathReplace: '$1/$&',
+			url: '/files'
+		},
+		processes: {
+			'large': {
+				contain: true,
+				width: 1280,
+				height: 1280,
+				mediaType: 'image/jpeg',
+				quality: 75
+			},
+			'small': {
+				cover: true,
+				width: 128,
+				height: 128,
+				mediaType: 'image/jpeg',
+				quality: 75
+			}
+		}
 	}
 };
