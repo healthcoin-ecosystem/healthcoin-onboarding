@@ -1,9 +1,11 @@
 // See http://docs.feathersjs.com/hooks/readme.html
 
-function setOwner() {
-	return hook => { hook.data.userID = hook.params.user._id };
-}
+const feathersHooks = require('feathers-hooks');
+const feathersHooksCommon = require('feathers-hooks-common');
+const feathersAuthenticationHooks = require('feathers-authentication').hooks;
 
-module.exports = {
-	setOwner
-};
+module.exports = Object.assign({},
+	feathersHooks,
+	feathersHooksCommon,
+	feathersAuthenticationHooks
+);

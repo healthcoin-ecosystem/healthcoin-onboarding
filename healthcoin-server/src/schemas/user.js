@@ -23,5 +23,8 @@ module.exports = new mongoose.Schema({
 	modified: {
 		type: Date,
 		'default': Date.now
+	},
+	deleted: {
+		type: Boolean
 	}
 });
