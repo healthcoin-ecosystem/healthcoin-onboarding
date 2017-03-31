@@ -28,6 +28,7 @@
     "feathers-client": "^1.9.0",
     "feathers-errors": "^2.6.2",
     "feathers-hooks": "^1.8.1",
+    "feathers-hooks-common": "^2.0.3",
     "feathers-mongoose": "^3.6.2",
     "feathers-rest": "^1.7.1",
     "fs-blob-store": "^5.2.1",

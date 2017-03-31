@@ -3,16 +3,15 @@ const mongoose = require('mongoose');
 const service = require('feathers-mongoose');
 
 const hooks = require('../hooks');
-const imageSchema = require('../schemas/image');
-const imageUpload = require('../middleware/image-upload');
+const messageSchema = require('../schemas/message');
 
-const imageModel = mongoose.model('image', imageSchema);
+const messageModel = mongoose.model('message', messageSchema);
 
 module.exports = function () {
 	const app = this;
 
 	const options = {
-		Model: imageModel,
+		Model: messageModel,
 		paginate: {
 			default: 5,
 			max: 25
@@ -21,16 +20,16 @@ module.exports = function () {
 	};
 
 	// Initialize our service with any options it requires
-	app.use('/images', imageUpload(), service(options));
+	app.use('/messages', service(options));
 
 	// Get our initialized service so that we can bind hooks
-	const images = app.service('/images');
+	const messages = app.service('/messages');
 
 	// Set up our before hooks
-	images.before(before);
+	messages.before(before);
 
 	// Set up our after hooks
-	images.after(after);
+	messages.after(after);
 };
 
 const before = {
