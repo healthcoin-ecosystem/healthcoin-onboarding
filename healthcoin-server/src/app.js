@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.configure(hooks());
 app.configure(rest());
 app.configure(services);
+app.use('/*', feathers.static(path.join(__dirname, config.get('public'), 'index.html')));
 app.configure(middleware);
 
 module.exports = app;

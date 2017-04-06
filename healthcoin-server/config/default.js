@@ -3,7 +3,7 @@ module.exports = {
 	host: 'localhost',
 	port: 9000,
 	mongodb: {
-		connectionString: 'mongodb://localhost:27017/healthcoin_dev'
+		connectionString: 'mongodb://localhost/healthcoin_dev'
 	},
 	public: '../public/',
 	auth: {
