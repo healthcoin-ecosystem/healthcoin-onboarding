@@ -34,7 +34,7 @@ export default class LoginPage extends Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } };
+    const { from } = this.props.location.state || { from: { pathname: '/dashboard' } };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
