@@ -6,7 +6,7 @@ module.exports = app => {
 	return (req, res, next) => {
 		recaptcha.verify(req, err => {
 			if (err) {
-				return res.redirect('/signup.html');
+				return res.redirect('/signup');
 			}
 
 			const body = req.body;
@@ -25,7 +25,7 @@ module.exports = app => {
 
 				sendWelcomeMessage(app.service('messages'), user._id, user.email, siteUrl);
 
-				res.redirect('/client.html');
+				res.redirect('/dashboard');
 			});
 		});
 	};
@@ -36,7 +36,7 @@ function getSiteUrl(req) {
 }
 
 function sendWelcomeMessage(messageService, userID, email, siteUrl, callback) {
-	const url = siteUrl + '/login.html';
+	const url = siteUrl + '/login';
 
 	// TODO: Email templates are coming in a future sprint, for now just hard-code
 	const message = {

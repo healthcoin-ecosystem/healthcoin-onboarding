@@ -12,7 +12,7 @@ module.exports = {
 		},
 		local: {
 		},
-		successRedirect: '/client.html'
+		successRedirect: '/dashboard'
 	},
 	recaptcha: {
 		site: '',

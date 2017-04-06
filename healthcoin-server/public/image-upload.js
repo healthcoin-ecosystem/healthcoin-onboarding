@@ -16,7 +16,7 @@ $(function () {
 
 	}).catch(function (err) {
 		if (err.name == 'NotAuthenticated' || err.name == 'NotFound') {
-			window.location = '/login.html';
+			window.location = '/login';
 			return;
 		}
 

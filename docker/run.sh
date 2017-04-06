@@ -6,7 +6,6 @@ WEB_HOSTNAME=healthcoin-web1
 WEB_IMAGE=healthcoin-web
 
 docker stop $WEB_HOSTNAME
-docker stop $DB_HOSTNAME
 
 docker rm $WEB_HOSTNAME
 
