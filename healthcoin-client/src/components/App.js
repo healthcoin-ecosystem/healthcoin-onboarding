@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
-  withRouter
+  Redirect
 } from 'react-router-dom';
 import * as client from '../client';
 import DashboardPage from './DashboardPage';

@@ -7,8 +7,10 @@ export default function LoginForm({ onSubmit, onChange, errors, user }) {
     <Form method="POST" action="/auth/local" onSubmit={onSubmit} style={{ textAlign: 'left' }}>
       <Form.Input type="email" name="email" label="Email" autoFocus onChange={onChange} value={user.email}/>
       <Form.Input type="password" name="password" label="Password" onChange={onChange} value={user.password}/>
-      <Form.Field style={{ textAlign: 'center' }}>
-        <Button color="violet">Log In</Button>
+      <br/>
+      <Form.Field>
+        <Button color="violet" style={{ width: '50%' }}>Log In</Button>
+        <a href="/recovery" style={{ marginLeft: 16 }}>Forgot Password</a>
       </Form.Field>
       {errors.summary && <div>{errors.summary}</div>}
     </Form>

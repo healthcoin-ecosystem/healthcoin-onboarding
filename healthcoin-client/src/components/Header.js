@@ -9,7 +9,7 @@ export default class Header extends Component {
       <header>
         <Menu borderless style={{ zIndex: 102 }}>
           <Menu.Item header>
-            <img src="//healthcoin.com/wallet/images/Icon.png" alt="" style={{ width: 58, height: 58 }}/>
+            <img src="/icon.png" alt="" style={{ width: 58, height: 58 }}/>
             <span style={{ fontSize: '140%', marginLeft: 10 }}>Healthcoin</span>
           </Menu.Item>
           <Menu.Menu position="right">
