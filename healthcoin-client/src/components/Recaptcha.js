@@ -9,7 +9,7 @@ export default class Recaptcha extends Component {
     document.body.appendChild(this.script);
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     document.body.removeChild(this.script);
   }
 

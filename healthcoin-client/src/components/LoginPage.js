@@ -18,7 +18,7 @@ export default class LoginPage extends Component {
     document.body.classList.add('white', 'blob');
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     document.body.classList.remove('white', 'blob');
   }
 
