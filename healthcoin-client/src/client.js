@@ -27,6 +27,10 @@ export function logout(callback = null) {
 	if (callback) { callback(); }
 }
 
+export function getUser() {
+	return app.get('user') || {};
+}
+
 function authenticate(options, callback = null) {
 	const auth = options ? app.authenticate(options) : app.authenticate();
 
