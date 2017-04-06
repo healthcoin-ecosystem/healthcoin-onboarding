@@ -2,7 +2,9 @@
 const config = require('config');
 const nodemailer = require('nodemailer');
 
-const transporter = nodemailer.createTransport(config.get('mail.connectionString'));
+const connectionString = config.get('mail.connectionString');
+
+const transporter = connectionString ? nodemailer.createTransport(connectionString) : null;
 
 if (config.get('mail.connectionVerify')) {
 	transporter.verify((err, success) => {
@@ -14,6 +16,8 @@ function send(message, callback) {
 	message = Object.assign({}, message, {
 		from: message.from || config.get('mail.from')
 	});
+
+	if (!transporter) { return callback(null, message, {}); }
 
 	transporter.sendMail(message, (err, info) => callback(err, message, info));
 }
