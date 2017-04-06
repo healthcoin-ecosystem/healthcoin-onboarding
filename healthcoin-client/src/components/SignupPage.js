@@ -19,7 +19,7 @@ export default class SignupPage extends Component {
     document.body.classList.add('blob');
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     document.body.classList.remove('blob');
   }
 
