@@ -3,6 +3,6 @@ module.exports = {
 	host: 'healthcoin-server',
 	port: 80,
 	mongodb: {
-		connectionString: 'mongodb://localhost:27017/healthcoin'
+		connectionString: 'mongodb://healthcoin-db1/healthcoin'
 	}
 };
