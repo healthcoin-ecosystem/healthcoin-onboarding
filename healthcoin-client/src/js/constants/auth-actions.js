@@ -1,0 +1,6 @@
+export const SIGN_IN = 'SIGN_IN'
+export const SIGNED_IN = 'SIGNED_IN'
+export const FAILED = 'FAILED'
+export const SIGN_UP = 'SIGN_UP'
+export const SIGNED_UP = 'SIGNED_UP'
+export const CLEAR_ERROR_MESSAGES = 'EMPTY_ERROR_MESSAGE'

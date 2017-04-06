@@ -1,0 +1,51 @@
+.wrapper {
+}
+
+.bg {
+  position: fixed;
+  height: 180px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff url('../../../images/main-bg.svg') no-repeat top center;
+}
+
+.content {
+  position: relative;
+}
+
+.logo {
+  padding: 5em 0 2em;
+  text-align: center;
+}
+
+.site-name {
+  margin-top: 0;
+  font-size: 3em;
+}
+
+.form-area {
+  position: relative;
+  width: 60em;
+  margin: 0 auto;
+}
+
+.form {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  padding: 0 3em;
+}
+
+.forgot-password-link {
+  float: right;
+  line-height: 2.5;
+}
+
+.sign-up-button {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  padding: 5em 0;
+  text-align: center;
+}
