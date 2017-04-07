@@ -24,7 +24,7 @@ export default class SignupPage extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    if (event && event.preventDefault) { event.preventDefault(); }
 
     const { email, password } = this.state.user;
 
@@ -44,7 +44,7 @@ export default class SignupPage extends Component {
 
   render() {
     return (
-      <Grid textAlign="center" verticalAlign="middle">
+      <Grid textAlign="center" verticalAlign="middle" padded>
         <Grid.Column style={{ maxWidth: 460 }}>
           <Segment raised style={{ padding: '32px 64px', marginTop: 64, marginBottom: 128 }}>
             <img src="/icon.png" alt="" style={{ width: 64, height: 64 }}/>
