@@ -1,0 +1,53 @@
+@value colors: "../../../styles/colors.css";
+@value darkGray, gray from colors;
+
+.bottom-label {
+  position: relative;
+  top: .4em;
+  float: left;
+  font-size: .9em;
+  color: darkGray;
+}
+
+.content {
+  padding: .3em .5em;
+}
+
+.meta {
+  font-size: .9em;
+  padding: 1em 0;
+}
+
+.header .meta-header {
+  margin-top: .7em;
+  font-size: .7em;
+  font-weight: 200;
+}
+
+.badges {
+  font-size: 0;
+}
+
+.badge {
+  display: inline-block;
+  width: 50%;
+  font-size: 1rem;
+}
+
+.badge-content {
+  padding: 1em 0 0;
+}
+
+.badge-name {
+  margin-bottom: 0;
+}
+
+.badge-description {
+  margin: .3em 0;
+  font-size: .8em;
+}
+
+.badge-coins-count {
+  color: gray;
+  font-size: .8em;
+}

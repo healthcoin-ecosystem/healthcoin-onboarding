@@ -1,0 +1,42 @@
+.wrapper {
+  float: left;
+  width: 20em;
+  padding: 2em 1.5em 0;
+  background-color: #fff;
+}
+
+.menus {
+  margin-bottom: 1em;
+}
+
+.dashboard-menu, .coins-menu, .history-menu {
+  display: block;
+  padding: 1.5em 0 1.5em 70px;
+  opacity: .7;
+  font-size: 1.3em;
+}
+
+.dashboard-menu:hover,
+.coins-menu:hover,
+.history-menu:hover {
+  opacity: 1;
+}
+
+.active.dashboard-menu,
+.active.coins-menu,
+.active.history-menu {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.dashboard-menu {
+  background: #f9f9f9 url('../../../images/dashboard-icon.png') no-repeat 5px;
+}
+
+.coins-menu {
+  background: #f9f9f9 url('../../../images/coins-icon.png') no-repeat 5px;
+}
+
+.history-menu {
+  background: #f9f9f9 url('../../../images/history-icon.png') no-repeat 5px;
+}

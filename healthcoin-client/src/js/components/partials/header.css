@@ -1,4 +1,22 @@
 .wrapper {
-  padding: 2em;
+  padding: 1.5em;
 }
 
+.logo {
+  width: 3.5em;
+  float: left;
+}
+
+.site-name {
+  margin: 0 0 0 .5em;
+  line-height: 2.2em;
+  font-size: 1.5em;
+  float: left;
+}
+
+.profile-area {
+  float: right;
+  font-weight: 600;
+  font-size: 1.2em;
+  line-height: 2.8em;
+}

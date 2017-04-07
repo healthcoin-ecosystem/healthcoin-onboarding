@@ -111,7 +111,7 @@ class SignUp extends Component {
         <div className={styles.basicInfoBg}></div>
         <Segment raised>
           <div className={styles.logo}>
-            <img src={logo} className={styles.logoImg}></img>
+            <img src={logo} title="Healthcoin Logo"></img>
             <h1 className="no-margin">Create Account</h1>
           </div>
           <Form onSubmit={this.handleSubmit} className={styles.form}>

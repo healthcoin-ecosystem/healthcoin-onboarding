@@ -19,10 +19,10 @@ new WebpackDevServer(webpack(config), {
     //"Cache-Control": "public, max-age=315360000"
     "Cache-Control": "no-store"
   }
-}).listen(8008, '0.0.0.0', function (err) {
+}).listen(3000, '0.0.0.0', function (err) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at http://0.0.0.0:8008');
+  console.log('Listening at http://0.0.0.0:3000');
 });

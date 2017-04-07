@@ -1,3 +1,5 @@
+@violet: #614baf;
+
 #healthcoin {
   .ui.form input:not([type]):focus,
   .ui.form input[type=text]:focus,
@@ -10,6 +12,11 @@
   .ui.form input[type=time]:focus,
   .ui.form input[type=url]:focus,
   .ui.form input[type=number]:focus {
-    border-color: #6435C9;
+    border-color: @violet;
+  }
+
+  .ui.violet.button,
+  .ui.violet.buttons .button {
+    background-color: @violet;
   }
 }
