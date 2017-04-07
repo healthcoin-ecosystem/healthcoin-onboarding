@@ -31,6 +31,15 @@
         background-position: 50% 650px;
         background-size: 1000px 1000px;
       }
+
+      .ui.form .required.field>.checkbox:after,
+      .ui.form .required.field>label:after,
+      .ui.form .required.fields.grouped>label:after,
+      .ui.form .required.fields:not(.grouped)>.field>.checkbox:after,
+      .ui.form .required.fields:not(.grouped)>.field>label:after {
+        display: none;
+      }
+
     </style>
   </head>
   <body>

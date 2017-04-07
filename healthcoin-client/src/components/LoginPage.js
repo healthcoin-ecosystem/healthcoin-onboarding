@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Header, List, Divider, Button } from 'semantic-ui-react';
+import { Grid, Header, Divider, Button } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom';
 import * as client from '../client';
 import LoginForm from './LoginForm';
@@ -23,7 +23,7 @@ export default class LoginPage extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    if (event && event.preventDefault) { event.preventDefault(); }
 
     const { email, password } = this.state.user;
 
@@ -52,7 +52,7 @@ export default class LoginPage extends Component {
     }
 
     return (
-      <Grid columns="2" relaxed="very" stackable textAlign="center" verticalAlign="middle" style={{ marginTop: 64, marginBottom: 128 }}>
+      <Grid columns="2" relaxed="very" stackable textAlign="center" verticalAlign="middle" padded style={{ marginTop: 64, marginBottom: 128 }}>
         <Grid.Row>
           <Grid.Column>
             <img src="/icon.png" alt="" style={{ width: 172, height: 172 }}/>
