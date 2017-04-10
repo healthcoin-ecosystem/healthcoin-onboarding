@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="49px" viewBox="0 0 43 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_groups</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="admin---groups" transform="translate(-30.000000, -227.000000)" stroke="#222829">
+            <g id="left-nav" transform="translate(0.000000, 102.000000)">
+                <g id="btn_groups" transform="translate(31.000000, 126.000000)">
+                    <g id="05-workgroup-people">
+                        <g id="ico_groups">
+                            <g id="Group">
+                                <g>
+                                    <path d="M20,48 L20,32" id="Shape" stroke-linejoin="round"></path>
+                                    <ellipse id="Oval" stroke-linejoin="round" cx="20.5" cy="3.80952381" rx="3.7962963" ry="3.80952381"></ellipse>
+                                    <path d="M28.8518519,16 L28.8518519,15.2380952 C28.8518519,12.7139048 26.8117222,10.6666667 24.2962963,10.6666667 L16.7037037,10.6666667 C14.1875185,10.6666667 12.1481481,12.7139048 12.1481481,15.2380952 L12.1481481,16" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M7,48 L7,35.047619" id="Shape" stroke-linejoin="round"></path>
+                                    <ellipse id="Oval" stroke-linejoin="round" cx="7.59259259" cy="9.9047619" rx="3.03703704" ry="3.04761905"></ellipse>
+                                    <path d="M12.1481481,48 L12.1481481,32.7619048 L15.1851852,32.7619048 L15.1851852,19.8095238 C15.1851852,17.7051429 13.485963,16 11.3888889,16 L3.7962963,16 C1.69922222,16 0,17.7051429 0,19.8095238 L0,32.7619048 L3.03703704,32.7619048 L3.03703704,48" id="Shape"></path>
+                                    <path d="M33,48 L33,35.047619" id="Shape" stroke-linejoin="round"></path>
+                                    <ellipse id="Oval" stroke-linejoin="round" cx="33.4074074" cy="9.9047619" rx="3.03703704" ry="3.04761905"></ellipse>
+                                    <path d="M37.962963,48 L37.962963,32.7619048 L41,32.7619048 L41,19.8095238 C41,17.7051429 39.3007778,16 37.2037037,16 L29.6111111,16 C27.514037,16 25.8148148,17.7051429 25.8148148,19.8095238 L25.8148148,32.7619048 L28.8518519,32.7619048 L28.8518519,48" id="Shape"></path>
+                                    <path d="M20,12.952381 L20,14.4761905" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M20,16 L20,17.5238095" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M33,18.2857143 L33,19.8095238" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M7,18.2857143 L7,19.8095238" id="Shape" stroke-linejoin="round"></path>
+                                </g>
+                                <path d="M15,32.7619048 L15,48" id="Shape" stroke-linejoin="round"></path>
+                                <path d="M25,32.7619048 L25,48" id="Shape" stroke-linejoin="round"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

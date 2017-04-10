@@ -1,4 +1,12 @@
-import {SIGN_IN, SIGNED_IN, FAILED, SIGN_UP, SIGNED_UP, CLEAR_ERROR_MESSAGES} from '../constants/auth-actions'
+import {
+  SIGN_IN,
+  SIGNED_IN,
+  FAILED,
+  SIGN_UP,
+  SIGNED_UP,
+  SIGNED_OUT,
+  CLEAR_ERROR_MESSAGES
+} from '../constants/auth-actions'
 
 const initialState = {
   isProcessing: false,
@@ -27,6 +35,11 @@ export default function auth(state = initialState, action) {
         isProcessing: false,
         currentUser: action.payload
       }
+    case SIGNED_OUT:
+      return Object.assign({}, state, {
+        token: null,
+        currentUser: null
+      })
     case FAILED:
       return {
         isProcessing: false,
@@ -34,7 +47,7 @@ export default function auth(state = initialState, action) {
           message: action.payload.message
         }
       }
-    case CLEAR_ERROR_MESSAGES: 
+    case CLEAR_ERROR_MESSAGES:
       return Object.assign({}, state, {
         error: null
       })

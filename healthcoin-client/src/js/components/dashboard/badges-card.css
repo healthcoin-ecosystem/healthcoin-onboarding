@@ -51,3 +51,12 @@
   color: gray;
   font-size: .8em;
 }
+
+.card-extra-content {
+  text-align: center;
+  background-color: #f4f4f4 !important;
+}
+
+.img {
+  width: 106px;
+}

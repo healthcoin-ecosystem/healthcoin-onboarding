@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import {Card, Modal, Button, Header, List, Image} from 'semantic-ui-react'
+import Slider from 'react-slick'
 
+import {sliderOptions} from '../../constants/slider-options'
 import styles from './badges-card.css'
 
 export default class BadgesCard extends Component {
@@ -18,20 +20,50 @@ export default class BadgesCard extends Component {
       <Card>
         <Card.Content>
           <div className={styles.content}>
-            <Card.Header>
-              Next Badge: Bio-data Boss
-            </Card.Header>
-            <Card.Meta>
-              <p className={styles.meta}>
-                Add 2 more biomarkers to earn the Bio-data Boss Badge.
-              </p>
-            </Card.Meta>
-            <Card.Description className="text-center hand-cursor">
-              <Image onClick={this.show.bind(this)} src="../../../images/bio-data-boss.png" alt="Bio-data Boss"/>
-            </Card.Description>
+            <Slider {...sliderOptions} dots={false}>
+              <div>
+                <Card.Header className="bold">
+                  Next Badge: Bio-data Boss
+                </Card.Header>
+                <Card.Meta>
+                  <p className={styles.meta}>
+                    Add 2 more biomarkers to earn the Bio-data Boss Badge.
+                  </p>
+                </Card.Meta>
+                <Card.Description className="text-center hand-cursor">
+                  <Image className={styles.img} onClick={this.show.bind(this)} src="../../../images/badge-1-earned.png" alt="Bio-data Boss"/>
+                </Card.Description>
+              </div>
+              <div>
+                <Card.Header className="bold">
+                  Next Badge: Bio-data Boss
+                </Card.Header>
+                <Card.Meta>
+                  <p className={styles.meta}>
+                    Add 2 more biomarkers to earn the Bio-data Boss Badge.
+                  </p>
+                </Card.Meta>
+                <Card.Description className="text-center hand-cursor">
+                  <Image className={styles.img} onClick={this.show.bind(this)} src="../../../images/badge-2-earned.png" alt="Bio-data Boss"/>
+                </Card.Description>
+              </div>
+              <div>
+                <Card.Header className="bold">
+                  Next Badge: Bio-data Boss
+                </Card.Header>
+                <Card.Meta>
+                  <p className={styles.meta}>
+                    Add 2 more biomarkers to earn the Bio-data Boss Badge.
+                  </p>
+                </Card.Meta>
+                <Card.Description className="text-center hand-cursor">
+                  <Image className={styles.img} onClick={this.show.bind(this)} src="../../../images/badge-3-earned.png" alt="Bio-data Boss"/>
+                </Card.Description>
+              </div>
+            </Slider>
           </div>
         </Card.Content>
-        <Card.Content extra>
+        <Card.Content extra className={styles.cardExtraContent}>
           <p className={styles.bottomLabel}>6 more badges available</p>
           <Button onClick={this.show.bind(this)} size="mini" floated="right">View Badges</Button>
         </Card.Content>
@@ -45,7 +77,7 @@ export default class BadgesCard extends Component {
           <Modal.Content>
             <div className={styles.badges}>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-great-start.png" alt="Great Start"/>
+                <Image floated="left" src="../../../images/badge-1-earned.png" alt="Great Start"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>Great Start</h4>
                   <p className={styles.badgeDescription}>Earned for signing up to Healthcoins</p>
@@ -53,7 +85,7 @@ export default class BadgesCard extends Component {
                 </div>
               </div>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-shooting-star.png" alt="Shooting Star"/>
+                <Image floated="left" src="../../../images/badge-2-earned.png" alt="Shooting Star"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>Shooting Star</h4>
                   <p className={styles.badgeDescription}>Earned for signing up to Healthcoins</p>
@@ -61,7 +93,7 @@ export default class BadgesCard extends Component {
                 </div>
               </div>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-bio-data-boss.png" alt="Bio-data Boss"/>
+                <Image floated="left" src="../../../images/badge-3-earned.png" alt="Bio-data Boss"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>Bio-data Boss</h4>
                   <p className={styles.badgeDescription}>Earned for signing up to Healthcoins</p>
@@ -69,7 +101,7 @@ export default class BadgesCard extends Component {
                 </div>
               </div>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-fit-for-good.png" alt="Fit For Good"/>
+                <Image floated="left" src="../../../images/badge-4-earned.png" alt="Fit For Good"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>FitForGood</h4>
                   <p className={styles.badgeDescription}>Earned for signing up to Healthcoins</p>
@@ -77,7 +109,7 @@ export default class BadgesCard extends Component {
                 </div>
               </div>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-step-master.png" alt="Step Master"/>
+                <Image floated="left" src="../../../images/badge-5-earned.png" alt="Step Master"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>Step Master</h4>
                   <p className={styles.badgeDescription}>Earned by 45 Coins</p>
@@ -85,7 +117,7 @@ export default class BadgesCard extends Component {
                 </div>
               </div>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-do-gooder.png" alt="DoGooder"/>
+                <Image floated="left" src="../../../images/badge-6-earned.png" alt="DoGooder"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>DoGooder</h4>
                   <p className={styles.badgeDescription}>Earned for signing up to Healthcoins</p>
@@ -93,7 +125,7 @@ export default class BadgesCard extends Component {
                 </div>
               </div>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-weight-loss.png" alt="Weight-loss"/>
+                <Image floated="left" src="../../../images/badge-7-earned.png" alt="Weight-loss"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>Weight-loss</h4>
                   <p className={styles.badgeDescription}>Earned for signing up to Healthcoins</p>
@@ -101,7 +133,7 @@ export default class BadgesCard extends Component {
                 </div>
               </div>
               <div className={styles.badge}>
-                <Image floated="left" src="../../../images/badge-helping-hero.png" alt="Helping Hero"/>
+                <Image floated="left" src="../../../images/badge-8-earned.png" alt="Helping Hero"/>
                 <div className={styles.badgeContent}>
                   <h4 className={styles.badgeName}>Helping Hero</h4>
                   <p className={styles.badgeDescription}>Earned for signing up to Healthcoins</p>

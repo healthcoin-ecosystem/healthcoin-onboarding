@@ -7,6 +7,7 @@ import configureStore from './store/configure-store'
 import './utils/promise-polyfill'
 import '../styles/normalize.less'
 import '../styles/overwritten.less'
+import '../styles/slick.less'
 import '../styles/base.less'
 import '../styles/layout.less'
 

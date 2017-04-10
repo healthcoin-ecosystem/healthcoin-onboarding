@@ -17,3 +17,8 @@
   width: 100%;
   height: 175px;
 }
+
+.card-extra-content {
+  text-align: center;
+  background-color: #f4f4f4 !important;
+}

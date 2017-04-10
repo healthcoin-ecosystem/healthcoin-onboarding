@@ -1,6 +1,9 @@
 @violet: #614baf;
 
-#healthcoin {
+/**
+ * Overwrite styles of semantic-ui
+**/
+#healthcoin-body {
   .ui.form input:not([type]):focus,
   .ui.form input[type=text]:focus,
   .ui.form input[type=email]:focus,
@@ -18,5 +21,16 @@
   .ui.violet.button,
   .ui.violet.buttons .button {
     background-color: @violet;
+  }
+
+  .ui.card .meta,
+  .ui.cards>.card .meta {
+    color: #000;
+  }
+
+  .ui.modal>.actions {
+    background-color: #fff;
+    text-align: center;
+    border-top: none;
   }
 }

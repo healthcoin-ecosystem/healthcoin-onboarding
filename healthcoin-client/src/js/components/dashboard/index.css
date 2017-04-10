@@ -48,6 +48,7 @@
 }
 
 .content {
+  position: relative;
   background-color: lightGray;
 }
 
@@ -56,6 +57,13 @@
 }
 
 .dashboard {
-  float: left;
-  padding: 2em;
+  padding: 2em 2em 2em 22em;
+}
+
+.cards {
+  justify-content: space-between;
+}
+
+#graph-area {
+  margin: 2em 1em 0 0;
 }

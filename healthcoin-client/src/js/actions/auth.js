@@ -57,6 +57,14 @@ export const signUp = (user) => {
   }
 }
 
+export const signOut = () => {
+  return dispatch => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('currentUser')
+    dispatch(echo(authActions.SIGNED_OUT))
+  }
+}
+
 export const clearErrorMessages = () => {
   return dispatch => {
     dispatch({

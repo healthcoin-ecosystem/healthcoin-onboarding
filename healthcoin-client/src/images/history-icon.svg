@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_biodata-history</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.4">
+        <g id="dashboard---empty-state" transform="translate(-29.000000, -396.000000)" stroke="#222829">
+            <g id="left-nav" transform="translate(0.000000, 102.000000)">
+                <g id="btn_show-past-entries" transform="translate(30.000000, 295.000000)">
+                    <g id="ico_biodata-history">
+                        <g id="_x30_3_x5F_accounts_x5F_storage">
+                            <g id="Group">
+                                <rect id="Rectangle-path" stroke-linejoin="round" x="0" y="24.3870968" width="42" height="17.6129032"></rect>
+                                <polyline id="Shape" points="36.5806452 10.8387097 37.9354839 10.8387097 42 24.3870968"></polyline>
+                                <polyline id="Shape" points="0 24.3870968 4.06451613 10.8387097 5.41935484 10.8387097"></polyline>
+                                <g transform="translate(4.741935, 0.000000)" id="Shape">
+                                    <polyline points="4.06451613 8.80645161 4.06451613 2.70967742 10.8387097 2.70967742 14.9032258 0 28.4516129 0 28.4516129 8.80645161"></polyline>
+                                    <polyline points="2.70967742 13.5483871 2.70967742 10.8387097 29.8064516 10.8387097 29.8064516 13.5483871"></polyline>
+                                    <polyline points="1.35483871 17.6129032 1.35483871 15.5806452 31.1612903 15.5806452 31.1612903 17.6129032"></polyline>
+                                    <polyline points="0 22.3548387 0 19.6451613 32.516129 19.6451613 32.516129 22.3548387"></polyline>
+                                </g>
+                                <path d="M30.483871,30.483871 L30.483871,32.516129 L30.483871,33.8709677 C30.483871,34.9927742 29.5740968,35.9032258 28.4516129,35.9032258 L13.5483871,35.9032258 C12.4265806,35.9032258 11.516129,34.9934516 11.516129,33.8709677 L11.516129,30.483871 L30.483871,30.483871 Z" id="Shape"></path>
+                                <path d="M8.12903226,33 L6.77419355,33" id="Shape"></path>
+                                <path d="M35.2258065,33 L33.8709677,33" id="Shape"></path>
+                                <path d="M14.9032258,33 L27.0967742,33" id="Shape"></path>
+                                <path d="M24.3870968,4 L31.1612903,4" id="Shape"></path>
+                                <path d="M10.8387097,6 L31.1612903,6" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

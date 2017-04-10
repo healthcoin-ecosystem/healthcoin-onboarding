@@ -1,5 +1,7 @@
 .wrapper {
-  float: left;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width: 20em;
   padding: 2em 1.5em 0;
   background-color: #fff;
@@ -20,6 +22,7 @@
 .coins-menu:hover,
 .history-menu:hover {
   opacity: 1;
+  color: #000;
 }
 
 .active.dashboard-menu,
@@ -27,16 +30,17 @@
 .active.history-menu {
   opacity: 1;
   font-weight: 600;
+  color: #000;
 }
 
 .dashboard-menu {
-  background: #f9f9f9 url('../../../images/dashboard-icon.png') no-repeat 5px;
+  background: #fff url('../../../images/dashboard-icon.svg') no-repeat 5px;
 }
 
 .coins-menu {
-  background: #f9f9f9 url('../../../images/coins-icon.png') no-repeat 5px;
+  background: #fff url('../../../images/coins-icon.svg') no-repeat 5px;
 }
 
 .history-menu {
-  background: #f9f9f9 url('../../../images/history-icon.png') no-repeat 5px;
+  background: #fff url('../../../images/history-icon.svg') no-repeat 5px;
 }
