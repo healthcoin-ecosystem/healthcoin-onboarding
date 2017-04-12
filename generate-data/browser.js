@@ -123,7 +123,7 @@ function generate() {
 
 	document.getElementById('data').innerText = JSON.stringify(biodata, null, '   ');
 
-	document.getElementById('heading').innerHTML = biodata.gender + ', score: ' + biodata.healthscore + ', trajectory: <span style="color: ' + (trajectoryColors[biodata.trajectory] || '') + ';">' + biodata.trajectory + '</span>';
+	document.getElementById('heading').innerHTML = biodata._gender + ', score: ' + biodata._healthscore + ', trajectory: <span style="color: ' + (trajectoryColors[biodata._trajectory] || '') + ';">' + biodata._trajectory + '</span>';
 }
 
 const trajectoryColors = {
