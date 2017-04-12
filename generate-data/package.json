@@ -1,0 +1,23 @@
+{
+  "name": "generate-data",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "browser": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify browser.js -o bundle.js"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "async": "^2.3.0",
+    "config": "^1.25.1",
+    "faker": "^4.1.0",
+    "gaussian": "^1.1.0",
+    "mongodb": "^2.2.25"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
