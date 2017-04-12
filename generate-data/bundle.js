@@ -124,7 +124,7 @@ function generate() {
 
 	document.getElementById('data').innerText = JSON.stringify(biodata, null, '   ');
 
-	document.getElementById('heading').innerHTML = biodata.gender + ', score: ' + biodata.healthscore + ', trajectory: <span style="color: ' + (trajectoryColors[biodata.trajectory] || '') + ';">' + biodata.trajectory + '</span>';
+	document.getElementById('heading').innerHTML = biodata._gender + ', score: ' + biodata._healthscore + ', trajectory: <span style="color: ' + (trajectoryColors[biodata._trajectory] || '') + ';">' + biodata._trajectory + '</span>';
 }
 
 const trajectoryColors = {
@@ -149,13 +149,6 @@ generate();
 window.generate = generate;
 
 },{"./generate-biodata":2}],2:[function(require,module,exports){
-// sample period min 6 months math 2 years
-// generate back five years, yearly sample frequency prior to joining DPP
-
-// generate health value randomly with a distribution curve
-// mean at 35, standard dev at 20
-
-// shift health score over time 5 to 10, 6 months to a year
 
 const gaussian = require('gaussian');
 
@@ -189,12 +182,13 @@ function generateBiodata() {
 	const dataset = biodataset(start, end, healthscore, trajectory, gender);
 
 	return {
-		start,
-		end,
-		healthscore,
-		trajectory,
-		gender,
-		dataset
+		_start: start,
+		_end: end,
+		_healthscore: healthscore,
+		_trajectory: trajectory,
+		_gender: gender,
+		_demo: true,
+		dataset,
 	};
 }
 
@@ -213,9 +207,9 @@ function biodataset(start, end, healthscore, trajectory, gender) {
 			const data = { type, data: [] };
 
 			dates.forEach(date => {
-				// Using the healthscore and trajectory slope, determine healthscore factor for date
-				const factor = getFactorForTrajectoryAtDate(trajectory, timeline, date);
-				const factoredHealthscore = healthscore * factor;
+				// Using the healthscore and trajectory line, determine healthscore addend for date
+				const addend = getAddendForTrajectoryAtDate(trajectory, timeline, date);
+				const adjustedHealthscore = healthscore + addend;
 
 				let healthscoreModel = model.healthscore[type];
 
@@ -228,7 +222,7 @@ function biodataset(start, end, healthscore, trajectory, gender) {
 				// look up marker value from model using nearest healthscore
 				let value = healthscoreModel.reduce(
 					(prev, curr) => {
-						return (Math.abs(curr[0] - factoredHealthscore) < Math.abs(prev[0] - factoredHealthscore)) ? curr : prev;
+						return (Math.abs(curr[0] - adjustedHealthscore) < Math.abs(prev[0] - adjustedHealthscore)) ? curr : prev;
 					}
 				)[1];
 
@@ -249,7 +243,7 @@ function biodataset(start, end, healthscore, trajectory, gender) {
 
 const day = 86400000;
 
-function getFactorForTrajectoryAtDate(trajectory, timeline, date) {
+function getAddendForTrajectoryAtDate(trajectory, timeline, date) {
 	for (let i = 0; i < timeline.length - 1; ++i) {
 		let point1 = timeline[i];
 		let point2 = timeline[i + 1];
@@ -318,27 +312,33 @@ module.exports = {
 		increase: {
 			weight: .05,
 			lines: [
-				// [ [ days ago, healthscore factor ] ]
-				[ [ -3650, 1 ], [ -365, 1 ], [ 0, .75 ] ]
+				// [ [ <days since last sample>, <healthscore addend> ] ]
+				[ [ -3650, 0 ], [ -365, 0 ], [ 0, -10 ] ],
+				[ [ -3650, 10 ], [ -365, 0 ], [ 0, -10 ] ],
+				[ [ -3650, -10 ], [ -365, 0 ], [ 0, -10 ] ]
 			]
 		},
 		decrease: {
 			weight: .6,
 			lines: [
-				[ [ -3650, 1 ], [ -365, 1 ], [ 0, 1.5 ] ]
+				[ [ -3650, 0 ], [ -365, 0 ], [ 0, 10 ] ],
+				[ [ -3650, 10 ], [ -365, 0 ], [ 0, 10 ] ],
+				[ [ -3650, -10 ], [ -365, 0 ], [ 0, 10 ] ]
 			]
 		},
 		stable: {
 			weight: .2,
 			lines: [
-				[ [ -3650, 1 ], [ -365, 1 ], [ 0, 1 ] ]
+				[ [ -3650, 0 ], [ -365, 0 ], [ 0, 0 ] ],
+				[ [ -3650, 10 ], [ -365, 0 ], [ 0, 0 ] ],
+				[ [ -3650, -10 ], [ -365, 0 ], [ 0, 0 ] ]
 			]
 		},
 		random: {
 			weight: .15,
 			lines: [
-				[ [ -3650, 1 ], [ -365, 1 ], [ -284, 1.05 ], [ -182, .95 ], [ -92, 1 ] ],
-				[ [ -3650, 1 ], [ -365, 1 ], [ -284, .95 ], [ -182, 1.05 ], [ -92, .95 ] ]
+				[ [ -3650, 10 ], [ -365, 0 ], [ -284, 5 ], [ -182, -5 ], [ -92, 0 ] ],
+				[ [ -3650, -10 ], [ -365, 0 ], [ -284, -5 ], [ -182, 5 ], [ -92, 0 ] ]
 			]
 		}
 	},
