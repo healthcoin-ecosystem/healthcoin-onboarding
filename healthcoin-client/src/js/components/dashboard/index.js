@@ -2,15 +2,29 @@ import React, {Component} from "react"
 import {connect} from 'react-redux'
 import {browserHistory} from 'react-router'
 import DashboardHeader from '../partials/header'
+import ProgressBar from '../partials/progress-bar'
 import Sidebar from '../partials/sidebar'
 import RewardsCard from './rewards-card'
 import PerformanceCard from './performance-card'
 import BadgesCard from './badges-card'
-import {Button, Card, Image, Modal, Header, List, Segment, Dropdown, Radio} from 'semantic-ui-react'
+import {Card, Segment, Dropdown, Radio} from 'semantic-ui-react'
 
 import styles from './index.css'
 
 class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      group: 'You'
+    }
+  }
+
+  handleChange(e, {value}) {
+    this.setState({
+      group: value
+    })
+  }
+
   componentWillMount() {
     if (!this.props.auth.token) {
       browserHistory.push('/sign-in')
@@ -18,17 +32,17 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    var serial = {
-      x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      y: [0, 4, 2, 8, 3, 2, 1, 6, 3, 5],
+    const serial = {
+      x: [3, 5, 7, 9, 13, 15, 19],
+      y: [155, 21, 200, 350, 75, 152, 178],
       fill: 'tozeroy',
-      name: "FIRST",
+      name: "Blood pressure",
       type: 'area',
       hoverinfo: 'x+name+y+text',
       showlegend: true,
       marker: {
         color: '#6a15c6',
-        size: 12,
+        size: 10,
         symbol: '100',
         opacity: '1'
       },
@@ -36,27 +50,55 @@ class Dashboard extends Component {
         shape: 'spline'
       }
     };
-    var data = [serial];
 
-    Plotly.newPlot('graph', data);
+    const trace2 = {
+      x: [7, 13],
+      y: [200, 75],
+      name: "Badge Earned",
+      type: 'scatter',
+      hoverinfo: 'none',
+      showlegend: true,
+      marker: {
+        color: '#6a15c6',
+        size: 16,
+        symbol: 'circle-open-dot',
+        opacity: '1'
+      },
+      line: {
+        width: '0'
+      }
+    };
+
+    var data = [trace2, serial];
+
+    Plotly.newPlot('graph', data, {
+      margin: {
+        l: 20,
+        r: 20,
+        t: 20,
+        b: 20
+      },
+      xaxis: {
+        tickmode: 'linear'
+      },
+      legend: {
+        bgcolor: 'transparent',
+        orientation: 'h',
+        x: '0.7',
+        y: '1'
+      }
+    }, {
+      displayModeBar: false
+    });
   }
 
   render() {
     const {currentUser} = this.props.auth
-
+    const {group} = this.state
     return (
       <div>
         <DashboardHeader currentUser={currentUser}></DashboardHeader>
-        <div className={styles.progress}>
-          3 Bio-data entries are needed for your next healthcoin
-          <div className={styles.bar}>
-            <div className={styles.active + " " + styles.barItem}></div>
-            <div className={styles.active + " " + styles.barItem}></div>
-            <div className={styles.barItem}></div>
-            <div className={styles.barItem}></div>
-            <div className={styles.barItem}></div>
-          </div>
-        </div>
+        <ProgressBar></ProgressBar>
         <div className={styles.content + " clearfix"}>
           <Sidebar page="dashboard"></Sidebar>
           <div className={styles.dashboard}>
@@ -78,12 +120,16 @@ class Dashboard extends Component {
                 <Radio
                   label='You'
                   name='radioGroup'
-                  value='you'
+                  checked={group === 'You'}
+                  value='You'
+                  onChange={this.handleChange.bind(this)}
                 />&nbsp;&nbsp;&nbsp;
                 <Radio
-                  label='Yohort'
+                  label='Cohort'
                   name='radioGroup'
-                  value='yohort'
+                  checked={group === 'Cohort'}
+                  value='Cohort'
+                  onChange={this.handleChange.bind(this)}
                 />
               </div>
               <div id="graph">

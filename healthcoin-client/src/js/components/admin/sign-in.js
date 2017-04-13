@@ -3,21 +3,22 @@ import {browserHistory, Link} from 'react-router'
 import _ from 'lodash'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {Button, Form, Divider} from 'semantic-ui-react'
+import {Button, Form, Image, Segment} from 'semantic-ui-react'
 import * as authActions from '../../actions/auth'
 import {SIGN_IN_VALIDATORS} from '../../constants/form-validators'
 import ErrorMessages from '../partials/error-messages'
 
 import styles from './sign-in.css'
-const logo = require('../../../images/logo.png')
 
 class SignIn extends Component {
   constructor(props) {
     super(props);
-    this.state = {user: {
-      email: '',
-      password: ''
-    }, errors: {}};
+    this.state = {
+      user: {
+        email: '',
+        password: ''
+      }, errors: {}
+    };
   }
 
   updateField = (fieldName) => {
@@ -31,7 +32,7 @@ class SignIn extends Component {
   componentDidUpdate() {
     const {error, token} = this.props.auth
     if (token) {
-      browserHistory.push('/dashboard')
+      browserHistory.push('/admin')
     }
     if (_.isObject(error) && !_.has(this.state.errors, 'api')) {
       this.setState({
@@ -79,13 +80,16 @@ class SignIn extends Component {
     return (
       <section className={styles.wrapper}>
         <div className={styles.bg}></div>
-        <div className={styles.content}>
-          <div className={styles.logo}>
-            <img src={logo} alt="Healthcoin Logo"></img>
-            <h1 className={styles.siteName}>Healthcoin</h1>
-          </div>
-          <div className={styles.formArea}>
-            <Form onSubmit={this.handleSubmit} className={styles.form}>
+        <Segment raised>
+          <div className={styles.content}>
+            <div className="text-center">
+              <Image
+                className={styles.logo}
+                src="../../../images/logo.png"
+                alt="Healthcoin Logo"></Image>
+              <h1 id={styles.greeting}>Welcome Back</h1>
+            </div>
+            <Form onSubmit={this.handleSubmit}>
               <Form.Field>
                 <Form.Input label="Email"
                             value={user.email} placeholder='Email'
@@ -102,19 +106,13 @@ class SignIn extends Component {
                             onChange={this.updateField('password')}/>
               </Form.Field>
               {this.hasError() && $errorMessages}
-              <Form.Field className="clearfix">
+              <Form.Field className="clearfix" id={styles.actions}>
                 <Button color='violet' type="submit" loading={isProcessing}>Login</Button>
-                <a href="" className={styles.forgotPasswordLink}>Forgot password</a>
+                <a href="" className="float-right">Forgot password</a>
               </Form.Field>
             </Form>
-            <Divider vertical>Or</Divider>
-            <div className={styles.signUpButton}>
-              <Link to={`/sign-up`}>
-                <Button color='violet' size='big' content='Sign Up' icon='edit' labelPosition='left'/>
-              </Link>
-            </div>
           </div>
-        </div>
+        </Segment>
       </section>
     )
   }

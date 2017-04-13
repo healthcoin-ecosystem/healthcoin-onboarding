@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {Card, Modal, Button, Header, List, Image} from 'semantic-ui-react'
+import {Card, Modal, Button, Image} from 'semantic-ui-react'
 import Slider from 'react-slick'
 
 import {sliderOptions} from '../../constants/slider-options'

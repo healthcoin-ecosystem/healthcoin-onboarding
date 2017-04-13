@@ -1,55 +1,10 @@
 @value colors: "../../../styles/colors.css";
 @value violet, lightGray from colors;
 
-.progress {
-  line-height: 4;
-  box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.3);
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  background: rgba(100,53,201,1);
-  background: -moz-linear-gradient(-45deg, rgba(100,53,201,1) 0%, rgba(100,53,201,0.64) 38%, rgba(100,53,201,0.51) 52%, rgba(100,53,201,0.51) 57%, rgba(100,53,201,0.51) 78%, rgba(100,53,201,0.51) 85%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(100,53,201,1)), color-stop(38%, rgba(100,53,201,0.64)), color-stop(52%, rgba(100,53,201,0.51)), color-stop(57%, rgba(100,53,201,0.51)), color-stop(78%, rgba(100,53,201,0.51)), color-stop(85%, rgba(100,53,201,0.51)));
-  background: -webkit-linear-gradient(-45deg, rgba(100,53,201,1) 0%, rgba(100,53,201,0.64) 38%, rgba(100,53,201,0.51) 52%, rgba(100,53,201,0.51) 57%, rgba(100,53,201,0.51) 78%, rgba(100,53,201,0.51) 85%);
-  background: -o-linear-gradient(-45deg, rgba(100,53,201,1) 0%, rgba(100,53,201,0.64) 38%, rgba(100,53,201,0.51) 52%, rgba(100,53,201,0.51) 57%, rgba(100,53,201,0.51) 78%, rgba(100,53,201,0.51) 85%);
-  background: -ms-linear-gradient(-45deg, rgba(100,53,201,1) 0%, rgba(100,53,201,0.64) 38%, rgba(100,53,201,0.51) 52%, rgba(100,53,201,0.51) 57%, rgba(100,53,201,0.51) 78%, rgba(100,53,201,0.51) 85%);
-  background: linear-gradient(135deg, rgba(100,53,201,1) 0%, rgba(100,53,201,0.64) 38%, rgba(100,53,201,0.51) 52%, rgba(100,53,201,0.51) 57%, rgba(100,53,201,0.51) 78%, rgba(100,53,201,0.51) 85%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6435c9', endColorstr='#6435c9', GradientType=1 );
-}
-
-.bar {
-  display: inline-block;
-  margin-left: 3em;
-  border-radius: 3px;
-}
-
-.bar-item {
-  display: inline-block;
-  vertical-align: middle;
-  width: 8em;
-  height: 1em;
-  border-right: 2px gray solid;
-  background: #fff;
-}
-
-.bar-item:first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.bar-item:last-child {
-  border-right: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.active.bar-item {
-  background: violet;
-}
-
 .content {
   position: relative;
   background-color: lightGray;
+  min-height: 46em;
 }
 
 .card {
@@ -57,7 +12,7 @@
 }
 
 .dashboard {
-  padding: 2em 2em 2em 22em;
+  padding: 2em 0 2em 22em;
 }
 
 .cards {
@@ -65,5 +20,5 @@
 }
 
 #graph-area {
-  margin: 2em 1em 0 0;
+  margin: 2em 0 0 0;
 }

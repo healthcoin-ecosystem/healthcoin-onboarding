@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {Card, Button, Image} from 'semantic-ui-react'
+import {Card, Button} from 'semantic-ui-react'
 import {Link} from 'react-router'
 
 import styles from './performance-card.css'
