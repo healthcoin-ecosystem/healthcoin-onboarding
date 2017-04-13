@@ -4,6 +4,7 @@ const path = require('path');
 const config = require('config');
 const favicon = require('serve-favicon');
 const compression = require('compression');
+const cors = require('cors');
 const feathers = require('feathers');
 const hooks = require('feathers-hooks');
 const rest = require('feathers-rest');
@@ -16,6 +17,7 @@ const services = require('./services');
 const app = feathers();
 
 app.use(compression());
+app.use(cors());
 app.use(morgan('dev'));
 app.use(favicon(path.join(__dirname, config.get('public'), 'favicon.ico')));
 app.use('/', feathers.static(path.join(__dirname, config.get('public'))));
