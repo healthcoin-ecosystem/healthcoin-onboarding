@@ -50,7 +50,7 @@ const config = {
 		},
 		layout: {
 			yaxis: {
-				range: [ 2, 10.5 ]
+				range: [ 60, 130 ]
 			}
 		}
 	},
@@ -63,7 +63,7 @@ const config = {
 		},
 		layout: {
 			yaxis: {
-				range: [ 2, 10.5 ]
+				range: [ 90, 180 ]
 			}
 		}
 	},
@@ -71,7 +71,7 @@ const config = {
 		trace: {
 			line: {
 				shape: 'spline',
-				color: '#ff9900'
+				color: 'violet'
 			}
 		},
 		layout: {
