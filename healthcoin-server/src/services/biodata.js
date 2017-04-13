@@ -5,7 +5,7 @@ const service = require('feathers-mongoose');
 const hooks = require('../hooks');
 const biodataSchema = require('../schemas/biodata');
 
-const biodataModel = mongoose.model('biodata', biodataSchema);
+const biodataModel = mongoose.model('biodata', biodataSchema, 'biodata');
 
 module.exports = function () {
 	const app = this;
