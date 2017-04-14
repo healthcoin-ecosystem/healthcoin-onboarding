@@ -99,7 +99,7 @@ class Dashboard extends Component {
       <div>
         <DashboardHeader currentUser={currentUser}></DashboardHeader>
         <ProgressBar></ProgressBar>
-        <div className={styles.content + " clearfix"}>
+        <div className={styles.content + " clearfix restrict-width"}>
           <Sidebar page="dashboard"></Sidebar>
           <div className={styles.dashboard}>
             <Card.Group stackable className={styles.cards}>
@@ -108,7 +108,7 @@ class Dashboard extends Component {
               <BadgesCard></BadgesCard>
             </Card.Group>
             <Segment id={styles.graphArea}>
-              <Dropdown text='ALC' icon='chevron down' floating labeled button className='icon'>
+              <Dropdown text='A1C' icon='chevron down' floating labeled button className='icon'>
                 <Dropdown.Menu>
                   <Dropdown.Item>My Weight</Dropdown.Item>
                   <Dropdown.Item>My Waist Size</Dropdown.Item>

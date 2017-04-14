@@ -176,7 +176,7 @@ class Coins extends Component {
       <div>
         <DashboardHeader currentUser={currentUser}></DashboardHeader>
         <ProgressBar></ProgressBar>
-        <div className={styles.content + " clearfix"}>
+        <div className={styles.content + " clearfix restrict-width"}>
           <Sidebar page="coins"></Sidebar>
           <div className={styles.coins}>
             <Segment id={styles.coins}>

@@ -1,5 +1,7 @@
 import React, {Component} from "react"
 import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import * as markerActions from '../../actions/marker'
 import moment from 'moment'
 import _ from 'lodash'
 import {browserHistory} from 'react-router'
@@ -16,42 +18,16 @@ class BioHistory extends Component {
     if (!this.props.auth.token) {
       browserHistory.push('/sign-in')
     }
+    const {markers} = this.props.marker
+    if (!markers) {
+      this.props.actions.getUserMarkerTypes()
+    }
   }
 
   render() {
     const {currentUser} = this.props.auth
     const now = moment(new Date())
-    const bioDataEntries = [{
-      title: 'A1C',
-      value: '',
-      createdDate: moment([2017, 3, 10]).from(now),
-      verified: false
-    }, {
-      title: 'Blood Pressure Reported',
-      value: '120/70',
-      createdDate: moment([2006, 2, 21]).from(now),
-      verified: false
-    }, {
-      title: 'Added Weight: 196lbs',
-      value: '- 12lb',
-      createdDate: moment([2006, 1, 13]).from(now),
-      verified: true
-    }, {
-      title: 'Added Weight: 196lbs',
-      value: '- 12lb',
-      createdDate: moment([2006, 3, 14]).from(now),
-      verified: true
-    }, {
-      title: 'Added Weight: 196lbs',
-      value: '- 12lb',
-      createdDate: moment([2016, 11, 21]).from(now),
-      verified: true
-    }, {
-      title: 'Added Weight: 208lbs',
-      value: '- 12lb',
-      createdDate: moment([2010, 8, 21]).from(now),
-      verified: true
-    }]
+    const bioDataEntries = this.props.marker.history || []
 
     const $bioHisotryList = bioDataEntries.map((bio, index) => {
       const firstOrLastEntry = index === 0 ?
@@ -59,8 +35,8 @@ class BioHistory extends Component {
       return (
         <List.Item key={index}>
           <List.Content className={styles.entry + ' ' + styles[firstOrLastEntry]}>
-            <div className={styles.title}>{bio.title}</div>
-            <div className={styles.date}>{_.startCase(_.toLower(bio.createdDate))}</div>
+            <div className={styles.title}>Added {bio.type} : {bio.value}</div>
+            <div className={styles.date}>{_.startCase(_.toLower(moment(bio.date).from(now)))}</div>
             <Button
               className={styles.button}
               size="small"
@@ -78,7 +54,7 @@ class BioHistory extends Component {
       <div>
         <DashboardHeader currentUser={currentUser}></DashboardHeader>
         <ProgressBar></ProgressBar>
-        <div className={styles.content + " clearfix"}>
+        <div className={styles.content + " clearfix restrict-width"}>
           <Sidebar page="bio-history"></Sidebar>
           <div className={styles.history}>
             <Segment id={styles.history}>
@@ -97,12 +73,14 @@ class BioHistory extends Component {
 const mapStateToProps = (state) => {
   return {
     global: state.global,
-    auth: state.auth
+    auth: state.auth,
+    marker: state.marker
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    actions: bindActionCreators(markerActions, dispatch),
     dispatch
   }
 }

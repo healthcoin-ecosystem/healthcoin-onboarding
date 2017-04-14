@@ -2,6 +2,13 @@
 
  - React
  - Webpack 2
+ 
+## Dockerlized
+
+This project can be run with Docker.
+
+ - Development: `$ sh _scripts/dev.sh`
+ - Production: `$ sh _script/prod.sh`
 
 ## Installation
 

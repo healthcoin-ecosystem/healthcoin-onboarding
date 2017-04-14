@@ -18,7 +18,7 @@ class DashboardHeader extends Component {
     const currentUser = this.props.currentUser || {}
     return (
       <header className={styles.wrapper}>
-        <div className="clearfix">
+        <div className="clearfix restrict-width">
           <Image className={styles.logo} src="../../../images/logo-small.png" alt="Healthcoin Logo"/>
           <h1 className={styles.siteName}>Healthcoin</h1>
           <div className={styles.profileArea}>

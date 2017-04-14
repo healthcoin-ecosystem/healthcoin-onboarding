@@ -1,28 +1,75 @@
 import React, {Component} from "react"
-import {Button, List, Modal, Input, Dropdown} from 'semantic-ui-react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import * as markerActions from '../../actions/marker'
+import {Button, List, Modal, Input, Dropdown, Image} from 'semantic-ui-react'
 import {Link} from 'react-router'
 
 import styles from './sidebar.css'
 
-export default class Header extends Component {
+class Sidebar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      marker: {
+        value: ''
+      }, errors: {}
+    };
+  }
+
+  updateField = (fieldName) => {
+    return (event) => {
+      let marker = this.state.marker
+      marker[fieldName] = event.target.value
+      this.setState({marker})
+    }
+  }
+
+  componentWillMount() {
+    const {markers} = this.props.marker
+    if (!markers) {
+      this.props.actions.getUserMarkerTypes()
+    }
+  }
+
+  componentWillUpdate() {
+    const markers = this.props.marker.markers || []
+    if (markers.length > 0 && !this.state.typeId) {
+      this.setState({typeId: markers[0]._id})
+    }
+  }
+
   addBioData() {
     this.setState({modalOn: true})
+  }
+
+  submitBioData() {
+    const {marker, typeId} = this.state
+    this.props.actions.addMarker(typeId, {
+      date: new Date(),
+      value: marker.value
+    })
   }
 
   hide() {
     this.setState({modalOn: false})
   }
 
+  updateType(e, data) {
+    this.setState({
+      typeId: data.value
+    })
+  }
+
   render() {
     const page = this.props.page || {}
     const {modalOn} = this.state || {}
-    const bioInputs = [
-      {key: 'A1C', text: 'A1C', value: 'A1C'},
-      {key: 'Trigylcerides', text: 'Trigylcerides', value: 'Trigylcerides'},
-      {key: 'HDL', text: 'HDL', value: 'HDL'},
-      {key: 'Waist Size', text: 'Waist Size', value: 'Waist Size'},
-      {key: 'Blood Pressure', text: 'Blood Pressure', value: 'Blood Pressure'}
-    ]
+    const markers = this.props.marker.markers || []
+    const bioTypes = markers.map(m => ({
+      key: m.type,
+      text: m.type,
+      value: m._id
+    }))
     return (
       <aside className={styles.wrapper}>
         <List className={styles.menus}>
@@ -51,27 +98,57 @@ export default class Header extends Component {
           dimmer="inverted"
           open={modalOn}
           onClose={this.hide.bind(this)}>
-          <Modal.Header className={styles.header}>
-            Add a Bio-Data
-            <p className={styles.metaHeader}>
+          <Modal.Header id={styles.header}>
+            <h2 className="no-margin">Add a Bio-Data</h2>
+            <p className={styles.subHeader}>
               Enter the data below and upload your verification
             </p>
           </Modal.Header>
-          <Modal.Content>
-            <Input
-              label={<Dropdown defaultValue='A1C' options={bioInputs} />}
-              labelPosition='right'
-              placeholder={`8`}/>
-            <p className={styles.note}>
-              <strong>Note:</strong> Entering an Hb1AC bio-data accounts for 50% of your overall health score
-            </p>
+          <Modal.Content id={styles.content}>
+            <div className={styles.content}>
+              <Input
+                id={styles.input}
+                label={<Dropdown defaultValue={bioTypes[0] && bioTypes[0].value} options={bioTypes} onChange={this.updateType.bind(this)} />}
+                labelPosition='right'
+                onChange={this.updateField('value')}
+                placeholder={`8`}/>
+              <p className={styles.note}>
+                <strong>Note: </strong>
+                Entering an Hb1AC bio-data accounts for 50% of your overall health score
+              </p>
+              <div className={styles.upload}>
+                <Image src="../../../images/upload.png" id={styles.uploadImg}></Image>
+                <p className={styles.line}>Drag & Drop your verification here: </p>
+                <p className={styles.line}>we accept png, jpgs, and pdf’s</p>
+              </div>
+            </div>
           </Modal.Content>
-          <Modal.Actions className="clearfix">
-            <Button className="float-left" onClick={this.hide.bind(this)}>Cancel</Button>
-            <Button color="violet" className="float-right" onClick={this.hide.bind(this)}>Submit</Button>
+          <Modal.Actions className="clearfix" id={styles.actions}>
+            <Button className="float-left no-margin" onClick={this.hide.bind(this)}>Cancel</Button>
+            <Button className="float-right no-margin" color="violet"
+                    onClick={this.submitBioData.bind(this)}>Submit</Button>
           </Modal.Actions>
         </Modal>
       </aside>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    global: state.global,
+    marker: state.marker
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(markerActions, dispatch),
+    dispatch
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Sidebar)

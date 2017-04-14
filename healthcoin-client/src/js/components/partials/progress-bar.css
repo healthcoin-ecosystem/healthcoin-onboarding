@@ -2,7 +2,6 @@
 @value violet, lightGray from colors;
 
 .progress {
-  padding-left: 22em;
   line-height: 4;
   box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.3);
   text-align: left;
@@ -18,16 +17,20 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6435c9', endColorstr='#6435c9', GradientType=1 );
 }
 
+.content {
+  padding-left: 22em;
+}
+
 .bar {
   display: inline-block;
-  margin-left: 3em;
+  margin-left: 2em;
   border-radius: 3px;
 }
 
 .bar-item {
   display: inline-block;
   vertical-align: middle;
-  width: 6.5em;
+  width: 6em;
   height: 1em;
   border-right: 2px gray solid;
   background: #fff;

@@ -44,3 +44,54 @@
 .history-menu {
   background: #fff url('../../../images/history-icon.svg') no-repeat 5px;
 }
+
+.add-bio-data-modald {
+  padding: 2em 3em;
+}
+
+#header {
+  padding: 2em 0 1.5em;
+  text-align: center;
+  border: none;
+}
+
+#input {
+  width: 25em;
+}
+
+.sub-header {
+  font-weight: 200;
+}
+
+.note {
+  margin: 2em 0;
+  font-size: 12px;
+}
+
+#content {
+  padding: 0 3em;
+}
+
+.content {
+  padding: 2em;
+  border: 1px solid #ccc;
+}
+
+.upload {
+  padding: 1em 0 1.5em;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#upload-img {
+  margin: 2em auto;
+}
+
+.line {
+  margin: .5em 0;
+}
+
+#actions {
+  padding: 2em 3em;
+}

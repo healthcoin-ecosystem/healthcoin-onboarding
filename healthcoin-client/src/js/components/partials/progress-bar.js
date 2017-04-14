@@ -8,13 +8,15 @@ export default class ProgressBar extends Component {
   render() {
     return (
       <div className={styles.progress}>
-        3 Bio-data entries are needed for your next healthcoin
-        <div className={styles.bar}>
-          <div className={styles.active + " " + styles.barItem}></div>
-          <div className={styles.active + " " + styles.barItem}></div>
-          <div className={styles.barItem}></div>
-          <div className={styles.barItem}></div>
-          <div className={styles.barItem}></div>
+        <div className={styles.content + " restrict-width"}>
+          3 Bio-data entries are needed for your next healthcoin
+          <div className={styles.bar}>
+            <div className={styles.active + " " + styles.barItem}></div>
+            <div className={styles.active + " " + styles.barItem}></div>
+            <div className={styles.barItem}></div>
+            <div className={styles.barItem}></div>
+            <div className={styles.barItem}></div>
+          </div>
         </div>
       </div>
     )

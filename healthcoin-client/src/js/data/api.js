@@ -13,7 +13,7 @@ const timeout = (ms, promise) => {
   })
 }
 
-export const baseCall = (endPoint, method, payload, token) => {
+export const baseCall = (endPoint, method, payload, token = localStorage.token) => {
   return timeout(5000, fetch(`${apiHost}/${endPoint}`, {
     method,
     headers: {

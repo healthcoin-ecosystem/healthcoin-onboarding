@@ -28,7 +28,7 @@ export default class RewardsCard extends Component {
   render() {
     const {modalOn, currentSlide} = this.state || {}
     const actionButton = [
-      (<Button size="mini" floated="right">Start Tutorial</Button>),
+      (<Button size="mini" floated="right" onClick={this.show.bind(this)} >Start Tutorial</Button>),
       (<Button size="mini" floated="right">Connect Now</Button>),
       (<Button size="mini" floated="right">Redeem</Button>)
     ][currentSlide]
@@ -69,7 +69,7 @@ export default class RewardsCard extends Component {
                   </p>
                 </Card.Meta>
                 <Card.Description className="text-center hand-cursor">
-                  <Image onClick={this.show.bind(this)} src="../../../images/rewards.png" alt="Rewards"/>
+                  <Image src="../../../images/rewards.png" alt="Rewards"/>
                 </Card.Description>
               </div>
             </Slider>
