@@ -16,6 +16,12 @@ module.exports = new mongoose.Schema({
 	lastname: {
 		type: String
 	},
+	roles: {
+		type: [ String ]
+	},
+	group: {
+		type: mongoose.Schema.ObjectId,
+	},
 	created: {
 		type: Date,
 		'default': Date.now
