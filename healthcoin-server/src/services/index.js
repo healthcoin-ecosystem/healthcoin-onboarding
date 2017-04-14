@@ -7,7 +7,7 @@ const authentication = require('./authentication');
 const user = require('./user');
 const image = require('./image');
 const biodata = require('./biodata');
-const groups = require('./groups');
+const group = require('./group');
 
 module.exports = function () {
 	const app = this;
@@ -20,5 +20,5 @@ module.exports = function () {
 	app.configure(message);
 	app.configure(image);
 	app.configure(biodata);
-	app.configure(groups);
+	app.configure(group);
 };
