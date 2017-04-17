@@ -33,6 +33,8 @@ export default function auth(state = initialState, action) {
         markers: action.payload.data,
         history: action.payload.history
       })
+    case actions.CLEANUP_MARKERS:
+      return initialState
     default:
       return state
   }

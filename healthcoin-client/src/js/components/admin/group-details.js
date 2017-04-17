@@ -18,7 +18,8 @@ class AdminGroupDetails extends Component {
   }
 
   componentWillMount() {
-    if (!this.props.auth.token) {
+    if (!this.props.auth.token ||
+        !(this.props.auth.currentUser.roles || []).find(role => role === 'admin')) {
       browserHistory.push('/admin/sign-in')
     }
   }
@@ -35,7 +36,7 @@ class AdminGroupDetails extends Component {
     const {currentUser} = this.props.auth
     const {currentParticipantIndex} = this.state
     const sampleParticipant = (index) => ({
-      name: `Participate ${index}`,
+      name: `’Participant’ ${index}`,
       markers: [{
         'title': 'A1C',
         'value': '5.6%',

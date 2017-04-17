@@ -37,7 +37,12 @@ class SignUp extends Component {
   componentWillMount() {
     const {currentUser} = this.props.auth
     if (!_.isEmpty(currentUser)) {
-      browserHistory.push('/dashboard')
+      if((currentUser.roles || []).find(role => role === 'admin')) {
+        browserHistory.push('/admin')
+      }
+      else {
+        browserHistory.push('/dashboard')
+      }
     }
   }
 

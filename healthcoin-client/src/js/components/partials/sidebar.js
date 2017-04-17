@@ -4,12 +4,37 @@ import {bindActionCreators} from 'redux'
 import * as markerActions from '../../actions/marker'
 import {Button, List, Modal, Input, Dropdown, Image} from 'semantic-ui-react'
 import {Link} from 'react-router'
+import {browserHistory} from 'react-router';
 
 import styles from './sidebar.css'
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
+
+    this.typeLabels = {
+      "a1c": {
+        text: "an A1C bio-data", 
+        value: "50%"
+      },
+      "trigylcerides": {
+        text: "your triglyceride level", 
+        value: "5%"
+      },
+      "hdl": {
+        text: "your HDL level", 
+        value: "20%"
+      },
+      "waist size": {
+        text: "an waist measurement", 
+        value: "10%"
+      },
+      "blood pressure": {
+        text: "your blood pressure level", 
+        value: "15%"
+      }
+    };
+
     this.state = {
       marker: {
         value: ''
@@ -35,35 +60,50 @@ class Sidebar extends Component {
   componentWillUpdate() {
     const markers = this.props.marker.markers || []
     if (markers.length > 0 && !this.state.typeId) {
-      this.setState({typeId: markers[0]._id})
+      this.updateType(null, {
+        value: markers[0]._id
+      })
     }
   }
 
-  addBioData() {
-    this.setState({modalOn: true})
+  openBioDataModal() {
+    this.setState({modal: "data"});
   }
 
   submitBioData() {
-    const {marker, typeId} = this.state
+    const {marker, typeId} = this.state;
     this.props.actions.addMarker(typeId, {
       date: new Date(),
       value: marker.value
-    })
+    });
+    this.setState({modal: "success"});
   }
 
-  hide() {
-    this.setState({modalOn: false})
+  closeModal() {
+    this.setState({
+      modal: null,
+      typeId: null
+    });
   }
 
   updateType(e, data) {
+    const markers = this.props.marker.markers || []
+    const selectedType = markers.find(m => m._id === data.value)
+
+    let typeLabel = {};
+    if(selectedType) {
+      typeLabel = this.typeLabels[selectedType.type.toLowerCase()];
+    }
+
     this.setState({
-      typeId: data.value
-    })
+      typeId: data.value,
+      typeLabel
+    });
   }
 
   render() {
     const page = this.props.page || {}
-    const {modalOn} = this.state || {}
+    const {modal} = this.state
     const markers = this.props.marker.markers || []
     const bioTypes = markers.map(m => ({
       key: m.type,
@@ -84,20 +124,19 @@ class Sidebar extends Component {
             </Link>
           </List.Item>
           <List.Item>
-            <Link className={styles.historyMenu + ' ' + (page === 'bio-history' ? styles.active : '')}
-                  to="/bio-history">
+            <Link className={styles.historyMenu + ' ' + (page === 'bio-history' ? styles.active : '')} to="/bio-history">
               Bio-Data History
             </Link>
           </List.Item>
         </List>
         <Link>
-          <Button color="violet" fluid onClick={this.addBioData.bind(this)}>Add Bio-data</Button>
+          <Button color="violet" fluid onClick={this.openBioDataModal.bind(this)}>Add Bio-Data</Button>
         </Link>
         <Modal
           size="small"
           dimmer="inverted"
-          open={modalOn}
-          onClose={this.hide.bind(this)}>
+          open={modal === 'data'}
+          onClose={this.closeModal.bind(this)}>
           <Modal.Header id={styles.header}>
             <h2 className="no-margin">Add a Bio-Data</h2>
             <p className={styles.subHeader}>
@@ -114,7 +153,7 @@ class Sidebar extends Component {
                 placeholder={`8`}/>
               <p className={styles.note}>
                 <strong>Note: </strong>
-                Entering an Hb1AC bio-data accounts for 50% of your overall health score
+                Entering {this.state.typeLabel && this.state.typeLabel.text} accounts for {this.state.typeLabel && this.state.typeLabel.value} of your overall health score
               </p>
               <div className={styles.upload}>
                 <Image src="../../../images/upload.png" id={styles.uploadImg}></Image>
@@ -124,11 +163,26 @@ class Sidebar extends Component {
             </div>
           </Modal.Content>
           <Modal.Actions className="clearfix" id={styles.actions}>
-            <Button className="float-left no-margin" onClick={this.hide.bind(this)}>Cancel</Button>
+            <Button className="float-left no-margin" onClick={this.closeModal.bind(this)}>Cancel</Button>
             <Button className="float-right no-margin" color="violet"
                     onClick={this.submitBioData.bind(this)}>Submit</Button>
           </Modal.Actions>
         </Modal>
+        <Modal
+          size="small"
+          dimmer="inverted"
+          open={modal === 'success'}
+          onClose={this.closeModal.bind(this)}>
+          <Modal.Header id={styles.header}>
+            <h2 className="no-margin">Success!</h2>
+            <p className={styles.subHeader}>
+              We have received your data and will verify it.
+            </p>
+          </Modal.Header>          
+          <Modal.Actions className="clearfix" id={styles.actions}>
+            <Button onClick={this.closeModal.bind(this)}>Close</Button>
+          </Modal.Actions>
+        </Modal>        
       </aside>
     )
   }

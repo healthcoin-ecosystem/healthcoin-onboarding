@@ -29,9 +29,14 @@ class SignIn extends Component {
   }
 
   componentDidUpdate() {
-    const {error, token} = this.props.auth
+    const {error, token, currentUser} = this.props.auth;
     if (token) {
-      browserHistory.push('/dashboard')
+      if((currentUser.roles || []).find(role => role === 'admin')) {
+        browserHistory.push('/admin')
+      }
+      else {
+        browserHistory.push('/dashboard')
+      }
     }
     if (_.isObject(error) && !_.has(this.state.errors, 'api')) {
       this.setState({

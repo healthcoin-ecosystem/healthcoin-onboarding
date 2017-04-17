@@ -10,7 +10,8 @@ import styles from './index.css'
 class Dashboard extends Component {
 
   componentWillMount() {
-    if (!this.props.auth.token) {
+    if (!this.props.auth.token ||
+        !(this.props.auth.currentUser.roles || []).find(role => role === 'admin')) {
       browserHistory.push('/admin/sign-in')
     }
     browserHistory.push('/admin/groups')

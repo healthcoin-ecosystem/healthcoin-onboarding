@@ -43,7 +43,7 @@ export default class RewardsCard extends Component {
                 </Card.Header>
                 <Card.Description>
                   <br/>
-                  Hey Nick,
+                  Hey {this.props.currentUser.firstname},
                   <br/><br/>
                   We noticed you haven’t entered a waist measurement in over 120 days. Click the button below to follow
                   the easy tutorial on how to measure your waist.
@@ -65,7 +65,7 @@ export default class RewardsCard extends Component {
                 </Card.Header>
                 <Card.Meta>
                   <p className={styles.meta}>
-                    Hey Nick, we noticed you have 25 coins, you can use them for an insurance discount by clicking here
+                    Hey {this.props.currentUser.firstname}, we noticed you have 4 coins, you can use them for an insurance discount by clicking here
                   </p>
                 </Card.Meta>
                 <Card.Description className="text-center hand-cursor">

@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {Dropdown, Image} from 'semantic-ui-react'
 import * as authActions from '../../actions/auth'
+import * as markerActions from '../../actions/marker'
 import {browserHistory} from 'react-router'
 
 import styles from './header.css'
@@ -10,7 +11,8 @@ import styles from './header.css'
 class DashboardHeader extends Component {
 
   signOut() {
-    this.props.actions.signOut()
+    this.props.actions.signOut();
+    this.props.actions.cleanupMarkers();
     browserHistory.push("/sign-in")
   }
 
@@ -45,7 +47,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(authActions, dispatch),
+    actions: bindActionCreators({...authActions, ...markerActions}, dispatch),
     dispatch
   }
 }

@@ -11,7 +11,8 @@ import styles from './markers-graph.css'
 class AdminMarkersGraph extends Component {
 
   componentWillMount() {
-    if (!this.props.auth.token) {
+    if (!this.props.auth.token ||
+        !(this.props.auth.currentUser.roles || []).find(role => role === 'admin')) {
       browserHistory.push('/admin/sign-in')
     }
   }

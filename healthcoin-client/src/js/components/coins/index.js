@@ -36,52 +36,61 @@ class Coins extends Component {
     const {currentUser} = this.props.auth
     const {currentBioDataIndex} = this.state
     const now = moment(new Date())
+
     const coins = [{
       title: 'Coin 1',
-      createdDate: moment([2007, 0, 29]).from(now),
-      submitted: false,
-      bioData: [{
-        title: 'HDL',
-        value: '19',
-        createdDate: moment([2017, 2, 9])
-      }, {
-        title: 'Waist Size',
-        value: '30',
-        createdDate: moment([2017, 3, 15])
-      }, {
-        title: 'Blood Pressure',
-        value: '120/70',
-        createdDate: moment([2017, 3, 28])
-      }]
-    }, {
-      title: 'Coin 2',
-      createdDate: moment([2017, 0, 29]).from(now),
+      createdDate: moment([2015, 3, 2]).from(now),
       submitted: true,
       bioData: [{
         title: 'A1C',
         value: '5.6%',
-        createdDate: moment([2017, 3, 2])
+        createdDate: moment([2015, 3, 2])
       }, {
         title: 'Trigylcerides',
         value: '207',
-        createdDate: moment([2017, 1, 5])
+        createdDate: moment([2015, 1, 5])
       }, {
         title: 'HDL',
-        value: '19',
-        createdDate: moment([2017, 2, 9])
+        value: '190',
+        createdDate: moment([2015, 2, 9])
       }, {
         title: 'Waist Size',
         value: '30',
-        createdDate: moment([2017, 3, 15])
-      }, {
+        createdDate: moment([2015, 3, 1])
+      },{
         title: 'Blood Pressure',
         value: '120/70',
-        createdDate: moment([2017, 3, 28])
+        createdDate: moment([2015, 3, 1])
+      }]
+    }, {
+      title: 'Coin 2',
+      createdDate: moment([2017, 3, 1]).from(now),
+      submitted: false,
+      bioData: [{
+        title: 'A1C',
+        value: '5.6%',
+        createdDate: moment([2016, 3, 2])
+      }, {
+        title: 'Trigylcerides',
+        value: '207',
+        createdDate: moment([2016, 1, 5])
+      }, {
+        title: 'HDL',
+        value: '190',
+        createdDate: moment([2016, 2, 9])
+      }, {
+        title: 'Waist Size',
+        value: '30',
+        createdDate: moment([2016, 3, 1])
+      },{
+        title: 'Blood Pressure',
+        value: '120/70',
+        createdDate: moment([2017, 3, 1])
       }]
     }, {
       title: 'Coin 3',
-      createdDate: moment([2017, 2, 29]).from(now),
-      submitted: true,
+      createdDate: moment([2017, 3, 2]).from(now),
+      submitted: null,
       bioData: [{
         title: 'A1C',
         value: '5.6%',
@@ -94,23 +103,32 @@ class Coins extends Component {
     }, {
       title: 'Coin 4',
       createdDate: moment([2017, 3, 1]).from(now),
-      submitted: true,
+      submitted: null,
       bioData: [{
+        title: 'Waist Size',
+        value: '30',
+        createdDate: moment([2016, 3, 1])
+      },{
+        title: 'Blood Pressure',
+        value: '120/70',
+        createdDate: moment([2017, 3, 1])
+      }]
+    }, {
+      title: 'Coin 5',
+      createdDate: moment([2017, 3, 2]).from(now),
+      submitted: null,
+      bioData: [{
+        title: 'A1C',
+        value: '5.6%',
+        createdDate: moment([2017, 3, 2])
+      }, {
         title: 'Trigylcerides',
         value: '207',
         createdDate: moment([2017, 1, 5])
       }, {
-        title: 'HDL',
-        value: '19',
-        createdDate: moment([2017, 2, 9])
-      }, {
         title: 'Waist Size',
         value: '30',
-        createdDate: moment([2017, 3, 15])
-      }, {
-        title: 'Blood Pressure',
-        value: '120/70',
-        createdDate: moment([2017, 3, 28])
+        createdDate: moment([2016, 3, 1])
       }]
     }]
     const $coinsList = coins.map((coin, index) => {
@@ -156,15 +174,19 @@ class Coins extends Component {
               <div className={styles.coinDate}>{_.startCase(_.toLower(coin.createdDate))}</div>
             </div>
             <div className={styles.rightArea}>
-              <Button
-                fluid
-                className={styles.submitCoinButton}
-                size="small"
-                color={coin.submitted ? 'grey' : 'violet'}
-                basic={coin.submitted}
-                disabled={coin.submitted}>
-                {coin.submitted ? 'Submitted' : 'Submit'}
-              </Button>
+              {
+                coin.submitted === null
+                ? null
+                : <Button
+                    fluid
+                    className={styles.submitCoinButton}
+                    size="small"
+                    color={coin.submitted ? 'grey' : 'violet'}
+                    basic={coin.submitted}
+                    disabled={coin.submitted}>
+                    {coin.submitted ? 'Submitted' : 'Submit'}
+                  </Button>
+              }
             </div>
           </List.Content>
           {(coin.bioData || []).length > 0 && currentBioDataIndex === index && $bioDataList}
@@ -180,7 +202,7 @@ class Coins extends Component {
           <Sidebar page="coins"></Sidebar>
           <div className={styles.coins}>
             <Segment id={styles.coins}>
-              <Header as='h1' id={styles.title}>Healthcoins</Header>
+              <Header as='h1' id={styles.title}>Coins</Header>
               <List divided relaxed size="big" verticalAlign="middle">
                 {$coinsList}
               </List>

@@ -72,3 +72,7 @@ export const getUserMarkerTypes = () => {
       })
   }
 }
+
+export const cleanupMarkers = () => ({
+  type: actions.CLEANUP_MARKERS
+})

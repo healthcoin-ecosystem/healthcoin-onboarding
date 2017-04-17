@@ -11,7 +11,8 @@ import styles from './groups.css'
 class AdminDashboard extends Component {
 
   componentWillMount() {
-    if (!this.props.auth.token) {
+    if (!this.props.auth.token ||
+        !(this.props.auth.currentUser.roles || []).find(role => role === 'admin')) {
       browserHistory.push('/admin/sign-in')
     }
   }
@@ -20,28 +21,28 @@ class AdminDashboard extends Component {
     const {currentUser} = this.props.auth
     const groups = [{
       id: '1',
-      name: 'Gruop 1',
-      membersCount: 30
+      name: 'Group 1',
+      membersCount: 20
     }, {
       id: '2',
-      name: 'Gruop 2',
-      membersCount: 18
+      name: 'Group 2',
+      membersCount: 20
     }, {
       id: '3',
-      name: 'Gruop 3',
-      membersCount: 125
+      name: 'Group 3',
+      membersCount: 20
     }, {
       id: '4',
-      name: 'Gruop 4',
-      membersCount: 156
+      name: 'Group 4',
+      membersCount: 20
     }, {
       id: '5',
-      name: 'Gruop 5',
-      membersCount: 23
+      name: 'Group 5',
+      membersCount: 20
     }, {
       id: '6',
-      name: 'Gruop 6',
-      membersCount: 453
+      name: 'Group 6',
+      membersCount: 20
     }]
 
     const $groupList = groups.map((group, index) => {
@@ -73,7 +74,7 @@ class AdminDashboard extends Component {
           <Sidebar page="groups"></Sidebar>
           <div className={styles.dashboard}>
             <Segment id={styles.groupList}>
-              <Header as='h1' id={styles.title}>Bio-Data History</Header>
+              <Header as='h1' id={styles.title}>Groups</Header>
               <List divided relaxed size="big" verticalAlign="middle">
                 {$groupList}
               </List>
