@@ -10,7 +10,7 @@ module.exports = new mongoose.Schema({
 	},
 	data: [{
 		date: { type: Date },
-		value: { type: Number }
+		value: { type: String }
 	}],
 	created: {
 		type: Date,

@@ -1,17 +1,16 @@
-
 const mongoose = require('mongoose');
 const service = require('feathers-mongoose');
 
 const hooks = require('../hooks');
-const biodataSchema = require('../schemas/biodata');
+const groupSchema = require('../schemas/group');
 
-const biodataModel = mongoose.model('biodata', biodataSchema, 'biodata');
+const groupModel = mongoose.model('group', groupSchema);
 
 module.exports = function () {
 	const app = this;
 
 	const options = {
-		Model: biodataModel,
+		Model: groupModel,
 		paginate: {
 			default: 5,
 			max: 25
@@ -20,16 +19,16 @@ module.exports = function () {
 	};
 
 	// Initialize our service with any options it requires
-	app.use('/biodata', service(options));
+	app.use('/groups', service(options));
 
 	// Get our initialized service so that we can bind hooks
-	const biodata = app.service('/biodata');
+	const groups = app.service('/groups');
 
 	// Set up our before hooks
-	biodata.before(before);
+	groups.before(before);
 
 	// Set up our after hooks
-	biodata.after(after);
+	groups.after(after);
 };
 
 const before = {

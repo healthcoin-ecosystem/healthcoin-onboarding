@@ -22,6 +22,7 @@
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "config": "^1.25.1",
+    "cors": "^2.8.3",
     "express-recaptcha": "^2.1.0",
     "feathers": "^2.1.1",
     "feathers-authentication": "^0.7.12",
@@ -42,7 +43,6 @@
     "serve-favicon": "^2.4.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
     "jshint": "^2.9.4",
     "mocha": "^3.2.0",
     "request": "^2.81.0"
