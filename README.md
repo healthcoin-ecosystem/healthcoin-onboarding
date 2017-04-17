@@ -19,3 +19,16 @@ This command will bundle the app source into `dist` folder. Need to configure ng
     $ npm run build
     
 
+## Notes
+Dev Server
+http://173.255.250.106:8008
+
+## Add users
+/generate-data/
+
+    $ node index.js
+
+Generates one new user with each run
+
+All new user passwords generated are 000000
+
