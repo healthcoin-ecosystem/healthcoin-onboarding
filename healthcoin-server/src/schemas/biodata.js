@@ -10,11 +10,7 @@ module.exports = new mongoose.Schema({
 	},
 	data: [{
 		date: { type: Date },
-<<<<<<< HEAD
-		value: { type: String }
-=======
 		value: { type: Number }
->>>>>>> master
 	}],
 	created: {
 		type: Date,

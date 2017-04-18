@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 const mongoose = require('mongoose');
 const service = require('feathers-mongoose');
 
