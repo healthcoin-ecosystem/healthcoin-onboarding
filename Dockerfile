@@ -9,16 +9,25 @@ RUN yum install \
 	python \
 	-y
 
-WORKDIR /opt/healthcoin
+ENV NODE_ENV=production
 
+WORKDIR /opt/healthcoin/healthcoin-server
 COPY healthcoin-server/package.json .
 RUN npm install --progress false
 
+WORKDIR /opt/healthcoin/healthcoin-client
+COPY healthcoin-client/package.json .
+RUN npm install --progress false
+
+WORKDIR /opt/healthcoin/healthcoin-server
 COPY healthcoin-server .
-COPY healthcoin-client/build ./public
 
+WORKDIR /opt/healthcoin/healthcoin-client
+COPY healthcoin-client .
+RUN npm run build
+
+RUN cp -r dist/* ../healthcoin-server/public/
+
+WORKDIR /opt/healthcoin/healthcoin-server
 EXPOSE 80
-
-ENV NODE_ENV=production
-
 CMD [ "node", "." ]
