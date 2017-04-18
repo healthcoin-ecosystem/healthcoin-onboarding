@@ -57,13 +57,4 @@ typings/
 # dotenv environment variables file
 .env
 
-healthcoin-client/Dockerfile
-
-healthcoin-client/_configs/
-healthcoin-client/Initialize the mongo data inside the docker container.md
-
-healthcoin-client/_scripts/deploy.sh
-
-healthcoin-client/_scripts/
-
-healthcoin-client/LICENSE
+healthcoin-client/dist/
