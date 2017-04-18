@@ -1,0 +1,50 @@
+.wrapper {
+  padding-top: 6em;
+}
+
+.basic-info-bg, .tc-bg {
+  position: fixed;
+  height: 460px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9f9f9 url('../../../images/main-bg.svg') no-repeat top center;
+}
+
+.tc-bg {
+  height: auto;
+  top: 0;
+}
+
+.content {
+}
+
+.basic-info {
+  width: 35em;
+  margin: 0 auto;
+}
+
+.logo {
+  padding: 1em 0 2em;
+  text-align: center;
+}
+
+.form {
+  padding: 0 3em 2em;
+}
+
+.tc {
+  width: 43em;
+  margin: 0 auto;
+}
+
+.tc-content {
+  padding: 1.5em 4em 2em;
+}
+
+.tc-text {
+  height: 500px;
+  margin-bottom: 3em;
+  padding-right: 1em;
+  overflow-y: auto;
+}

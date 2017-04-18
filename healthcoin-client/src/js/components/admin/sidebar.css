@@ -1,0 +1,40 @@
+.wrapper {
+  position: absolute;
+  top: 4px;
+  bottom: 0;
+  width: 20em;
+  padding: 2em 1.5em 0;
+  background-color: #fff;
+}
+
+.menus {
+  margin-bottom: 1em;
+}
+
+.rewards-menu, .groups-menu {
+  display: block;
+  padding: 1.5em 0 1.5em 70px;
+  opacity: .7;
+  font-size: 1.3em;
+}
+
+.rewards-menu:hover,
+.groups-menu:hover {
+  opacity: 1;
+  color: #000;
+}
+
+.active.rewards-menu,
+.active.groups-menu {
+  opacity: 1;
+  font-weight: 600;
+  color: #000;
+}
+
+.rewards-menu {
+  background: #fff url('../../../images/rewards-icon.svg') no-repeat 5px;
+}
+
+.groups-menu {
+  background: #fff url('../../../images/groups-icon.svg') no-repeat 5px;
+}

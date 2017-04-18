@@ -1,0 +1,73 @@
+.content {
+  position: relative;
+  min-height: 46em;
+  box-shadow: inset 0px 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+.group-details {
+  padding: 2em 0 2em 22em;
+}
+
+.section {
+  padding: 2em 2em 2em 1.5em !important;
+}
+
+#title {
+  font-weight: 200;
+}
+
+.list-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-area {
+  width: 50px;
+  padding-top: .2em;
+}
+
+.middle-area {
+  width: 80%;
+  padding: .95em 0 1em;
+}
+
+.right-area {
+  width: 150px;
+  padding: .95em 0 1em;
+}
+
+.triangle-icon {
+  width: 30px !important;
+  padding: .4em 1em 1em 0.3em;
+  cursor: pointer;
+  color: #999;
+}
+
+.marker-title {
+  width: 70%;
+  padding: .8em 1em .6em;
+}
+
+.markers-count {
+  min-width: 12em;
+  padding: .8em 0 .6em;
+}
+
+.marker-list {
+  padding-top: .5em !important;
+}
+
+.border-top {
+  border-top: 1px solid rgba(34,36,38,.15);
+}
+
+.first-entry {
+  border-top: 1px solid rgba(34,36,38,.15) !important;
+  padding-top: .42857143em !important;
+}
+
+.last-entry {
+  border-bottom: 1px solid rgba(34,36,38,.15) !important;
+  padding-bottom: .42857143em !important;
+}

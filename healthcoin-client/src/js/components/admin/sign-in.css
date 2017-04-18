@@ -1,0 +1,32 @@
+.wrapper {
+  width: 35em;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9f9f9 url('../../../images/main-bg.svg') no-repeat top center;
+}
+
+.content {
+  padding: 2em 4em;
+  text-align: left;
+}
+
+#greeting {
+  margin: .5em 0;
+}
+
+.logo {
+  width: 100px;
+  margin: 0 auto;
+}
+
+#actions {
+  margin: 2em 0 0;
+}

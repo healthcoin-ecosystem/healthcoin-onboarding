@@ -1,0 +1,23 @@
+.wrapper {
+  padding: 1.5em;
+  background-color: #fff;
+}
+
+.logo {
+  width: 57px;
+  float: left;
+}
+
+.site-name {
+  display: inline-block;
+  margin: 0 0 0 .5em;
+  line-height: 2.7em;
+  font-size: 1.5em;
+}
+
+.profile-area {
+  float: right;
+  padding-top: 1em;
+  font-weight: 600;
+  font-size: 1.2em;
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="40px" viewBox="0 0 44 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_coins</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.4">
+        <g id="dashboard---empty-state" transform="translate(-30.000000, -300.000000)" stroke="#222829">
+            <g id="left-nav" transform="translate(0.000000, 102.000000)">
+                <g id="btn_wallet" transform="translate(31.000000, 199.000000)">
+                    <g id="ico_coins">
+                        <g id="_x30_7_x5F_personal_x5F_wallet">
+                            <g id="Group">
+                                <g transform="translate(0.000000, 1.354839)">
+                                    <path d="M39.2903226,27.0967742 L39.2903226,36.5806452 L4.06451613,36.5806452 C1.81954839,36.5806452 0,34.7604194 0,32.516129 L0,4.06451613" id="Shape"></path>
+                                    <path d="M8.80645161,-2.27373675e-13 L4.06451613,-2.27373675e-13 C1.81954839,-2.27373675e-13 0,1.82022581 0,4.06451613 C0,6.30880645 1.81954839,8.12903226 4.06451613,8.12903226 L39.2903226,8.12903226 L39.2903226,17.6129032" id="Shape"></path>
+                                    <polyline id="Shape" points="39.2903226 6.09677419 39.2903226 -2.27373675e-13 35.9032258 -2.27373675e-13"></polyline>
+                                    <circle id="Oval" cx="27.0967742" cy="22.3548387" r="2.03225806"></circle>
+                                    <path d="M35.9032258,10 L34.5483871,10" id="Shape"></path>
+                                    <path d="M33.1935484,10 L31.8387097,10" id="Shape"></path>
+                                    <path d="M30.483871,10 L29.1290323,10" id="Shape"></path>
+                                    <path d="M27.7741935,10 L26.4193548,10" id="Shape"></path>
+                                    <path d="M25.0645161,10 L23.7096774,10" id="Shape"></path>
+                                    <path d="M22.3548387,10 L21,10" id="Shape"></path>
+                                    <path d="M19.6451613,10 L18.2903226,10" id="Shape"></path>
+                                    <path d="M16.9354839,10 L15.5806452,10" id="Shape"></path>
+                                    <path d="M14.2258065,10 L12.8709677,10" id="Shape"></path>
+                                    <path d="M11.516129,10 L10.1612903,10" id="Shape"></path>
+                                    <path d="M8.80645161,10 L7.4516129,10" id="Shape"></path>
+                                    <path d="M6.09677419,10 L4.74193548,10" id="Shape"></path>
+                                    <path d="M35.9032258,10 L34.5483871,10" id="Shape"></path>
+                                    <path d="M33.1935484,10 L31.8387097,10" id="Shape"></path>
+                                    <path d="M30.483871,10 L29.1290323,10" id="Shape"></path>
+                                    <path d="M27.7741935,10 L26.4193548,10" id="Shape"></path>
+                                    <path d="M25.0645161,10 L23.7096774,10" id="Shape"></path>
+                                    <path d="M22.3548387,10 L21,10" id="Shape"></path>
+                                    <path d="M19.6451613,10 L18.2903226,10" id="Shape"></path>
+                                    <path d="M16.9354839,10 L15.5806452,10" id="Shape"></path>
+                                    <path d="M14.2258065,10 L12.8709677,10" id="Shape"></path>
+                                    <path d="M11.516129,10 L10.1612903,10" id="Shape"></path>
+                                    <path d="M8.80645161,10 L7.4516129,10" id="Shape"></path>
+                                    <path d="M6.09677419,10 L4.74193548,10" id="Shape"></path>
+                                    <path d="M35.9032258,33 L34.5483871,33" id="Shape"></path>
+                                    <path d="M33.1935484,33 L31.8387097,33" id="Shape"></path>
+                                    <path d="M30.483871,33 L29.1290323,33" id="Shape"></path>
+                                    <path d="M27.7741935,33 L26.4193548,33" id="Shape"></path>
+                                    <path d="M25.0645161,33 L23.7096774,33" id="Shape"></path>
+                                    <path d="M22.3548387,33 L21,33" id="Shape"></path>
+                                    <path d="M19.6451613,33 L18.2903226,33" id="Shape"></path>
+                                    <path d="M16.9354839,33 L15.5806452,33" id="Shape"></path>
+                                    <path d="M14.2258065,33 L12.8709677,33" id="Shape"></path>
+                                    <path d="M11.516129,33 L10.1612903,33" id="Shape"></path>
+                                    <path d="M8.80645161,33 L7.4516129,33" id="Shape"></path>
+                                    <path d="M6.09677419,33 L4.74193548,33" id="Shape"></path>
+                                    <path d="M35.9032258,33 L34.5483871,33" id="Shape"></path>
+                                    <path d="M33.1935484,33 L31.8387097,33" id="Shape"></path>
+                                    <path d="M30.483871,33 L29.1290323,33" id="Shape"></path>
+                                    <path d="M27.7741935,33 L26.4193548,33" id="Shape"></path>
+                                    <path d="M25.0645161,33 L23.7096774,33" id="Shape"></path>
+                                    <path d="M22.3548387,33 L21,33" id="Shape"></path>
+                                    <path d="M19.6451613,33 L18.2903226,33" id="Shape"></path>
+                                    <path d="M16.9354839,33 L15.5806452,33" id="Shape"></path>
+                                    <path d="M14.2258065,33 L12.8709677,33" id="Shape"></path>
+                                    <path d="M11.516129,33 L10.1612903,33" id="Shape"></path>
+                                    <path d="M8.80645161,33 L7.4516129,33" id="Shape"></path>
+                                    <path d="M6.09677419,33 L4.74193548,33" id="Shape"></path>
+                                    <path d="M39.2903226,13.5483871 L39.9677419,13.5483871 C41.0895484,13.5483871 42,14.4581613 42,15.5806452 C42,16.703129 41.0895484,17.6129032 39.9677419,17.6129032 L27.0967742,17.6129032 C24.477871,17.6129032 22.3548387,19.7359355 22.3548387,22.3548387 C22.3548387,24.9737419 24.477871,27.0967742 27.0967742,27.0967742 L39.9677419,27.0967742 C41.0895484,27.0967742 42,26.187 42,25.0645161 L42,15.5806452" id="Shape"></path>
+                                </g>
+                                <polyline id="Shape" points="10.8387097 4.06451613 10.8387097 0 33.8709677 0 33.8709677 3.38709677"></polyline>
+                                <polyline id="Shape" points="29.8064516 6.09677419 29.8064516 4.06451613 6.77419355 4.06451613 6.77419355 6.09677419"></polyline>
+                                <path d="M39.2903226,5 L31.8387097,5" id="Shape"></path>
+                                <path d="M18,0 L18,2.03225806" id="Shape"></path>
+                                <path d="M21,0 L21,2.03225806" id="Shape"></path>
+                                <path d="M24,0 L24,2.03225806" id="Shape"></path>
+                                <path d="M27,0 L27,2.03225806" id="Shape"></path>
+                                <path d="M29,0 L29,2.03225806" id="Shape"></path>
+                                <path d="M13,0 L13,2.03225806" id="Shape"></path>
+                                <path d="M14,4.06451613 L14,6.09677419" id="Shape"></path>
+                                <path d="M17,4.06451613 L17,6.09677419" id="Shape"></path>
+                                <path d="M20,4.06451613 L20,6.09677419" id="Shape"></path>
+                                <path d="M23,4.06451613 L23,6.09677419" id="Shape"></path>
+                                <path d="M25,4.06451613 L25,6.09677419" id="Shape"></path>
+                                <path d="M9,4.06451613 L9,6.09677419" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

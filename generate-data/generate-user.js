@@ -11,11 +11,16 @@ function generateUser() {
 
 	return {
 		email: faker.internet.exampleEmail(firstname, lastname),
-		password: faker.internet.password(faker.random.number({ min: 12, max: 16 })),
+		//password: faker.internet.password(faker.random.number({ min: 12, max: 16 })),
+		// hash of 000000
+		// TODO: use a more secure default password
+		password: '$2a$10$TSS4ErE2nmuEfNXu.UrA6eBf0HiPhZhk5IegVhazrhOu6QwMZ46ee',
 		firstname,
 		lastname,
 		gender: [ 'male', 'female' ][gender],
 		birthdate: faker.date.between('1937-01-01', '1999-01-01'),
+		group: null,
+		roles: [],
 		created: now,
 		modified: now,
 		deleted: false,

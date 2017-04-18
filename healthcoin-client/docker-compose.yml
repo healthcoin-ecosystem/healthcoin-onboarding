@@ -1,0 +1,15 @@
+# The docker-compose config file
+# Run it: `docker-compose up`
+version: "2"
+services:
+  db:
+    image: joycoding/healthcoin-server
+  web:
+    image: joycoding/healthcoin-web
+    command: npm start
+    ports:
+      - "8002:8008"
+    depends_on:
+      - "db"
+    volumes:
+      - /home/shaojiang/Projects/healthcoin/healthcoin-web/:/usr/src/healthcoin-web
