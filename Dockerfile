@@ -27,6 +27,8 @@ COPY healthcoin-client .
 RUN npm run build
 
 RUN cp -r dist/* ../healthcoin-server/public/
+RUN mkdir ../healthcoin-server/public/images
+RUN cp -r src/images/* ../healthcoin-server/public/images/
 
 WORKDIR /opt/healthcoin/healthcoin-server
 EXPOSE 80
