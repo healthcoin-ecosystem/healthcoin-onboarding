@@ -9,7 +9,7 @@ import ProgressBar from '../partials/progress-bar'
 import Sidebar from '../partials/sidebar'
 import RewardsCard from './rewards-card'
 import PerformanceCard from './performance-card'
-import BadgesCard from './badges-card'
+import ClinicalTrialCard from './clinical-trial-card'
 import {Card, Segment, Dropdown, Radio} from 'semantic-ui-react'
 import moment from 'moment'
 
@@ -79,7 +79,7 @@ class Dashboard extends Component {
     const {markers} = this.props.marker
     if (!markers) {
       this.props.actions.getUserMarkerTypes()
-    }    
+    }
   }
 
   generateGroupData(data, type) {
@@ -142,7 +142,7 @@ class Dashboard extends Component {
       },
       line: {
         shape: 'spline'
-      }      
+      }
     };
     let values2 = Object.assign({}, values1);
     values2.x = [];
@@ -189,14 +189,14 @@ class Dashboard extends Component {
       },
       line: {
         shape: 'spline'
-      }      
+      }
     };
     let groupValues2 = Object.assign({}, groupValues1);
     groupValues2.x = [];
     groupValues2.marker = {
       color: '#2987cd',
       size: 10,
-    };    
+    };
 
     if(typeName === 'blood pressure') {
       values1.y = [];
@@ -279,14 +279,14 @@ class Dashboard extends Component {
         x: '0.5',
         y: '1.08'
       }
-    }, 
+    },
     {
       displayModeBar: false
     });
   }
 
   componentWillReceiveProps(props) {
-    if(this.props.marker.isProcessing && !props.marker.isProcessing && 
+    if(this.props.marker.isProcessing && !props.marker.isProcessing &&
        this.state.types.length === 0) {
       const markers = props.marker.markers || [];
       const types = markers.map(m => ({
@@ -312,7 +312,7 @@ class Dashboard extends Component {
         type
       });
     }
-  }  
+  }
 
   render() {
     const {currentUser} = this.props.auth
@@ -327,7 +327,7 @@ class Dashboard extends Component {
             <Card.Group stackable className={styles.cards}>
               <RewardsCard currentUser={currentUser}></RewardsCard>
               <PerformanceCard></PerformanceCard>
-              <BadgesCard></BadgesCard>
+              <ClinicalTrialCard></ClinicalTrialCard>
             </Card.Group>
             <Segment id={styles.graphArea}>
               <Dropdown value={this.state.type.value} options={this.state.types} icon='chevron down' floating labeled button className='icon' onChange={this.updateType.bind(this)}/>
