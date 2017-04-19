@@ -1,5 +1,5 @@
 @value colors: "../../../styles/colors.css";
-@value gray from colors;
+@value gray, darkGray from colors;
 
 .header .meta-header {
   margin-top: .7em;
@@ -26,3 +26,12 @@
   margin-top: 0.5em;
   color: gray;
 }
+
+.bottom-label {
+  position: relative;
+  top: .4em;
+  float: left;
+  font-size: .9em;
+  color: darkGray;
+}
+
