@@ -1,5 +1,6 @@
 import React, {Component} from "react"
-import {Card, Modal, Button, Header, List, Image, Input, Dropdown} from 'semantic-ui-react'
+import { Card, Modal, Button, Header, List, Image, Input, Dropdown } from 'semantic-ui-react'
+import { Link } from 'react-router'
 import Slider from 'react-slick'
 
 import styles from './rewards-card.css'
@@ -28,7 +29,12 @@ export default class RewardsCard extends Component {
   render() {
     const {modalOn, currentSlide} = this.state || {}
     const actionButton = [
-      (<Button size="mini" floated="right" onClick={this.show.bind(this)} >Start Tutorial</Button>),
+      (<div>
+        <p className={styles.bottomLabel}>View Your Healthcoin Balance</p>
+        <Link to="/coins">
+          <Button size="mini" floated="right">View Coins</Button>
+        </Link>
+        </div>),
       (<Button size="mini" floated="right">Connect Now</Button>),
       (<Button size="mini" floated="right">Redeem</Button>)
     ][currentSlide]
@@ -38,6 +44,19 @@ export default class RewardsCard extends Component {
           <div className={styles.content}>
             <Slider {...sliderOptions} afterChange={this.sliding.bind(this)}>
               <div>
+                <Card.Header className="bold text-center">
+                  <Image src="../../../images/badge-7-earned.png" alt="Rewards" style={{ width: 64, marginBottom: '.7em' }}/>
+                  <br/>
+                  Congrats, from Regional Health System
+                </Card.Header>
+                <Card.Description>
+                  <List bulleted style={{ display: 'inline-block', fontSize: '.9em', marginTop: '.5em' }}>
+                    <List.Item>Regional Health System congratulates you on your latest A1C result.</List.Item>
+                    <List.Item>Your doctor and community health team have been notified of your progress.</List.Item>
+                  </List>
+                </Card.Description>
+              </div>
+              {/*<div>
                 <Card.Header className="bold">
                   Enter your waist measurement
                 </Card.Header>
@@ -71,7 +90,7 @@ export default class RewardsCard extends Component {
                 <Card.Description className="text-center hand-cursor">
                   <Image src="../../../images/rewards.png" alt="Rewards"/>
                 </Card.Description>
-              </div>
+              </div>*/}
             </Slider>
           </div>
         </Card.Content>
