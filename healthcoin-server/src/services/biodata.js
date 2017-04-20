@@ -46,7 +46,11 @@ const before = {
 		hooks.restrictToOwner({ ownerField: 'userID' })
 	],
 	create: [
-		hooks.restrictToOwner({ ownerField: 'userID' }),
+		// Allow internal service requests to create biodata
+		hooks.iff(
+			hooks.isProvider('external'),
+			hooks.restrictToOwner({ ownerField: 'userID' })
+		),
 		hooks.associateCurrentUser({ as: 'userID' }),
 		hooks.setCreatedAt('created')
 	],

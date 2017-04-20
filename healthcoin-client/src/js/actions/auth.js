@@ -44,7 +44,7 @@ export const signIn = (user) => {
 export const signUp = (user) => {
   return dispatch => {
     dispatch(requestSignUp())
-    return api.baseCall('users', 'POST', user)
+    return api.baseCall('signup', 'POST', user)
       .then(json => {
         if (_.has(json, 'errors')) {
           dispatch(failed(json))
