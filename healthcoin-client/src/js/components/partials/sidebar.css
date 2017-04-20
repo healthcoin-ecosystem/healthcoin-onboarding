@@ -61,6 +61,7 @@
 
 .sub-header {
   font-weight: 200;
+  margin-top:1em;
 }
 
 .note {
@@ -70,6 +71,10 @@
 
 #content {
   padding: 0 3em;
+}
+
+#earned-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
 .content {

@@ -180,7 +180,7 @@ class Sidebar extends Component {
               You are generating Healthcoins like a champ. Here's how you did it.
             </p>
           </Modal.Header>
-          <Modal.Content>
+          <Modal.Content id={styles.earnedContent}>
             <Grid columns="2" relaxed="very" stackable textAlign="center" verticalAlign="middle" padded>
               <Grid.Row>
                 <Grid.Column style={{ maxWidth: 330 }}>
@@ -191,7 +191,6 @@ class Sidebar extends Component {
                     <List.Item>You entered results twice in 6 months.</List.Item>
                     <List.Item>Click below to see your A1C history.</List.Item>
                   </List>
-                  <Button color="violet" size="large" style={{ width: '90%', marginTop: '1em' }}>View A1C History</Button>
                 </Grid.Column>
                 <Grid.Column style={{ maxWidth: 330 }}>
                   <div style={{ color: '#5b5' }}><span style={{ fontSize: '2em', verticalAlign: 'middle', fontWeight: 'bold' }}>+</span> <span style={{ fontSize: '4em', verticalAlign: 'middle' }}>5</span></div>
@@ -201,7 +200,14 @@ class Sidebar extends Component {
                     <List.Item>Enter more bio-data to earn more.</List.Item>
                     <List.Item>Go to your Dashboard for more ways to earn Healthcoins.</List.Item>
                   </List>
-                  <Button color="violet" size="large" style={{ width: '90%', marginTop: '1em' }}>Go to Dashboard</Button>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column style={{ maxWidth: 330 }}>
+                  <Button onClick={this.closeModal.bind(this)} color="violet" size="large" style={{ width: '90%' }}>View A1C History</Button>
+                </Grid.Column>
+                <Grid.Column style={{ maxWidth: 330 }}>
+                  <Button onClick={this.closeModal.bind(this)} color="violet" size="large" style={{ width: '90%' }}>Go to Dashboard</Button>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
