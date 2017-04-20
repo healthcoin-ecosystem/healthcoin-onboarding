@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as markerActions from '../../actions/marker'
-import {Button, List, Modal, Input, Dropdown, Image} from 'semantic-ui-react'
+import {Button, List, Modal, Input, Dropdown, Image, Grid} from 'semantic-ui-react'
 import {Link} from 'react-router'
 import {browserHistory} from 'react-router';
 
@@ -14,23 +14,23 @@ class Sidebar extends Component {
 
     this.typeLabels = {
       "a1c": {
-        text: "an A1C bio-data", 
+        text: "A1C bio-data",
         value: "50%"
       },
       "trigylcerides": {
-        text: "your triglyceride level", 
+        text: "your triglyceride level",
         value: "5%"
       },
       "hdl": {
-        text: "your HDL level", 
+        text: "your HDL level",
         value: "20%"
       },
       "waist size": {
-        text: "an waist measurement", 
+        text: "an waist measurement",
         value: "10%"
       },
       "blood pressure": {
-        text: "your blood pressure level", 
+        text: "your blood pressure level",
         value: "15%"
       }
     };
@@ -138,7 +138,7 @@ class Sidebar extends Component {
           open={modal === 'data'}
           onClose={this.closeModal.bind(this)}>
           <Modal.Header id={styles.header}>
-            <h2 className="no-margin">Add a Bio-Data</h2>
+            <h2 className="no-margin">Add Bio-Data</h2>
             <p className={styles.subHeader}>
               Enter the data below and upload your verification
             </p>
@@ -150,15 +150,16 @@ class Sidebar extends Component {
                 label={<Dropdown defaultValue={bioTypes[0] && bioTypes[0].value} options={bioTypes} onChange={this.updateType.bind(this)} />}
                 labelPosition='right'
                 onChange={this.updateField('value')}
-                placeholder={`8`}/>
+                placeholder=""
+                autoFocus/>
               <p className={styles.note}>
                 <strong>Note: </strong>
-                Entering {this.state.typeLabel && this.state.typeLabel.text} accounts for {this.state.typeLabel && this.state.typeLabel.value} of your overall health score
+                {this.state.typeLabel && this.state.typeLabel.text} accounts for {this.state.typeLabel && this.state.typeLabel.value} of your overall health score
               </p>
               <div className={styles.upload}>
                 <Image src="../../../images/upload.png" id={styles.uploadImg}></Image>
                 <p className={styles.line}>Drag & Drop your verification here: </p>
-                <p className={styles.line}>we accept png, jpgs, and pdf’s</p>
+                <p className={styles.line}>we accept PNG, JPEG, and PDF</p>
               </div>
             </div>
           </Modal.Content>
@@ -174,15 +175,39 @@ class Sidebar extends Component {
           open={modal === 'success'}
           onClose={this.closeModal.bind(this)}>
           <Modal.Header id={styles.header}>
-            <h2 className="no-margin">Success!</h2>
+            <h2 className="no-margin">Healthcoins Earned</h2>
             <p className={styles.subHeader}>
-              We have received your data and will verify it.
+              You are generating Healthcoins like a champ. Here's how you did it.
             </p>
-          </Modal.Header>          
-          <Modal.Actions className="clearfix" id={styles.actions}>
-            <Button onClick={this.closeModal.bind(this)}>Close</Button>
-          </Modal.Actions>
-        </Modal>        
+          </Modal.Header>
+          <Modal.Content>
+            <Grid columns="2" relaxed="very" stackable textAlign="center" verticalAlign="middle" padded>
+              <Grid.Row>
+                <Grid.Column style={{ maxWidth: 330 }}>
+                  <div style={{ color: '#5b5' }}><span style={{ fontSize: '1em', verticalAlign: 'middle' }}>&#9660;</span> <span style={{ fontSize: '4em', verticalAlign: 'middle' }}>2</span></div>
+                  <h3>Improved A1C Level</h3>
+                  <List bulleted style={{ textAlign: 'left' }}>
+                    <List.Item>You lowered your A1C by 2 points.</List.Item>
+                    <List.Item>You entered results twice in 6 months.</List.Item>
+                    <List.Item>Click below to see your A1C history.</List.Item>
+                  </List>
+                  <Button color="violet" size="large" style={{ width: '90%', marginTop: '1em' }}>View A1C History</Button>
+                </Grid.Column>
+                <Grid.Column style={{ maxWidth: 330 }}>
+                  <div style={{ color: '#5b5' }}><span style={{ fontSize: '2em', verticalAlign: 'middle', fontWeight: 'bold' }}>+</span> <span style={{ fontSize: '4em', verticalAlign: 'middle' }}>5</span></div>
+                  <h3>Healthcoins Earned</h3>
+                  <List bulleted style={{ textAlign: 'left' }}>
+                    <List.Item>You have earned 7 coins in 7 days.</List.Item>
+                    <List.Item>Enter more bio-data to earn more.</List.Item>
+                    <List.Item>Go to your Dashboard for more ways to earn Healthcoins.</List.Item>
+                  </List>
+                  <Button color="violet" size="large" style={{ width: '90%', marginTop: '1em' }}>Go to Dashboard</Button>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+
+          </Modal.Content>
+        </Modal>
       </aside>
     )
   }
