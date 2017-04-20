@@ -20,26 +20,26 @@ class PerformanceCard extends Component {
   }
 
   slide(index) {
-    this.setState({ 
-      sliderIndex: index 
+    this.setState({
+      sliderIndex: index
     });
   }
 
   pfizerUpdate() {
-    this.setState({ 
+    this.setState({
       pfizerShared: !this.state.pfizerShared
     });
   }
 
   componentWillReceiveProps(props) {
-    if(props.marker.marker) {
-      this.setState({ 
-        sliderOptions: Object.assign({}, this.state.sliderOptions, {dots: true, arrows: true}),
-        pfizerShared: false
-      });
-      this.refs.slider.slickGoTo(1)
-    }
-  }  
+    // if(props.marker.marker) {
+    //   this.setState({
+    //     sliderOptions: Object.assign({}, this.state.sliderOptions, {dots: true, arrows: true}),
+    //     pfizerShared: false
+    //   });
+    //   this.refs.slider.slickGoTo(1)
+    // }
+  }
 
   render() {
     const {sliderIndex, pfizerShared} = this.state;
@@ -52,10 +52,10 @@ class PerformanceCard extends Component {
           <Button size="mini" floated="right">View Coins</Button>
         </Link>
         </div>),
-      (<div>
+      /*(<div>
         <p className={styles.bottomLabel}>{pfizerLabel}</p>
         <Button size="mini" floated="right" onClick={this.pfizerUpdate.bind(this)}>{pfizerButton}</Button>
-       </div>),
+       </div>),*/
     ][sliderIndex];
 
     return (
@@ -82,7 +82,7 @@ class PerformanceCard extends Component {
                   </svg>
                 </Card.Description>
               </div>
-              <div>
+              {/*<div>
                 <Card.Header className="bold">
                   Pfizer Study Available
                 </Card.Header>
@@ -90,8 +90,8 @@ class PerformanceCard extends Component {
                   <br/><br/>
                   <Image src="../../../images/pfizer.svg" alt="pfizer"/>
                 </Card.Description>
-              </div>              
-            </Slider>  
+              </div>*/}
+            </Slider>
           </div>
         </Card.Content>
         <Card.Content extra className={styles.cardExtraContent}>
