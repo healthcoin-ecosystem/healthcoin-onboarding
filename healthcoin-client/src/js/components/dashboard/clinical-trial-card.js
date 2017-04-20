@@ -31,7 +31,7 @@ export default class ClinicalTrialCard extends Component {
                     you qualify for a clinical trial of a glucose-lowering
                     oral medication.
                   </p>
-                  <Image className={styles.img} onClick={this.show.bind(this)} src="../../../images/badge-3-earned.png" alt="Bio-data Boss"/>
+                  <Image className={styles.img} onClick={this.show.bind(this)} src="../../../images/badge-trial.png" alt="Bio-data Boss"/>
                 </Card.Meta>
                 <Card.Description className={styles.description}>
                   <b>Your Data is Always Under Your Control</b>
@@ -54,7 +54,7 @@ export default class ClinicalTrialCard extends Component {
           </Modal.Header>
           <Modal.Content style={{ padding: '2em 5em' }}>
             <h4>About the Clinical Trial</h4>
-            <img src="../../../images/badge-3-earned.png" style={{ float: 'right', marginLeft: '1em' }}/>
+            <img src="../../../images/badge-trial.png" style={{ width: 64, float: 'right', marginLeft: '1em' }}/>
             <p>
               A Randomized, Double-blind, Parallel-group, Placebo-controlled
               Phase 2 Trial of GLM113A, an Oral Glucose-Lowering medication,
@@ -67,7 +67,7 @@ export default class ClinicalTrialCard extends Component {
             </p>
             <br/>
             <h4>Your Data and Your Rights</h4>
-            <img src="../../../images/badge-7-earned.png" style={{ float: 'right', marginLeft: '1em' }}/>
+            <img src="../../../images/badge-secure.png" style={{ width: 64, float: 'right', marginLeft: '1em' }}/>
             <List bulleted style={{ display: 'inline-block' }}>
               <List.Item>Any data collected by the trial will also belong to you.</List.Item>
               <List.Item>All of your data will be stored in your healthcoin account.</List.Item>

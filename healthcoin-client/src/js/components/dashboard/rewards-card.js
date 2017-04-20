@@ -45,7 +45,7 @@ export default class RewardsCard extends Component {
             <Slider {...sliderOptions} afterChange={this.sliding.bind(this)}>
               <div>
                 <Card.Header className="bold text-center">
-                  <Image src="../../../images/badge-7-earned.png" alt="Rewards" style={{ width: 64, marginBottom: '.7em' }}/>
+                  <Image src="../../../images/badge-plus-one.png" alt="Rewards" style={{ width: 64, marginBottom: '.7em' }}/>
                   <br/>
                   Congrats, from Regional Health System
                 </Card.Header>
