@@ -13,7 +13,7 @@ class DashboardHeader extends Component {
   signOut() {
     this.props.actions.signOut();
     this.props.actions.cleanupMarkers();
-    browserHistory.push("/sign-in")
+    browserHistory.push("/")
   }
 
   render() {

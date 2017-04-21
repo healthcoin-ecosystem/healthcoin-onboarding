@@ -1,7 +1,8 @@
 import React from 'react'
-import {Route, IndexRedirect, Redirect} from 'react-router'
+import {Route, IndexRoute, Redirect} from 'react-router'
 
 import Layout from './layout'
+import Landing from '../components/landing';
 import SignIn from '../components/auth/sign-in'
 import SignUp from '../components/auth/sign-up'
 import Init from '../components/profile/init'
@@ -20,7 +21,7 @@ injectTapEventPlugin();
 
 const routes = (
   <Route path='/' component={Layout}>
-    <IndexRedirect to='/dashboard'/>
+    <IndexRoute component={Landing}/>
     <Route path='/dashboard' component={Dashboard}/>
     <Route path='/sign-in' component={SignIn}/>
     <Route path='/sign-up' component={SignUp}/>
