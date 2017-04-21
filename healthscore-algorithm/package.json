@@ -4,7 +4,8 @@
   "description": "",
   "main": "healthscore.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "browserify healthscore.js --standalone healthscore -o dist/healthscore-browser.js"
   },
   "author": "",
   "license": "UNLICENSED",
