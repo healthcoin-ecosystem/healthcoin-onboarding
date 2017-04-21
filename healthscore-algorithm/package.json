@@ -1,0 +1,14 @@
+{
+  "name": "healthscore-algorithm",
+  "version": "0.1.0",
+  "description": "",
+  "main": "healthscore.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
