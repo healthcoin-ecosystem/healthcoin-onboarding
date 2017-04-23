@@ -23,28 +23,28 @@ class Dashboard extends Component {
       'a1c': 'Blood Glucose Level',
       'trigylcerides': 'Triglyceride Level',
       'hdl': 'HDL Levels',
-      'waist size': 'Inches',
+      'waist': 'Inches',
       'blood pressure': 'Systolic / Diastolic pressure'
     };
     this.plotTypes = {
       'a1c': 'area',
       'trigylcerides': 'area',
       'hdl': 'area',
-      'waist size': 'area',
+      'waist': 'area',
       'blood pressure': 'area'
     };
     this.showBadges = {
       'a1c': true,
       'trigylcerides': true,
       'hdl': true,
-      'waist size': true,
+      'waist': true,
       'blood pressure': false
     };
     this.dataLimits = {
       'a1c': [4, 6],
       'trigylcerides': [140, 160],
       'hdl': [60, 150],
-      'waist size': [30, 40],
+      'waist': [30, 40],
       'blood pressure': ['120/90', '170/130']
     }
 
@@ -72,9 +72,9 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    if (!this.props.auth.token) {
-      browserHistory.push('/sign-in');
-    }
+    //if (!this.props.auth.token) {
+    //  browserHistory.push('/sign-in');
+    //}
 
     const {markers} = this.props.marker
     if (!markers) {
@@ -83,6 +83,8 @@ class Dashboard extends Component {
   }
 
   generateGroupData(data, type) {
+    return [];
+
     const min = this.dataLimits[type][0];
     const max = this.dataLimits[type][1];
 
@@ -247,7 +249,7 @@ class Dashboard extends Component {
       groupValues1.name = 'Cohort\'s ' + this.state.type.text;
     }
 
-    Plotly.newPlot('plot', [values1, values2, groupValues1, groupValues2, badges1, badges2], {
+    Plotly.newPlot('plot', [values1, values2, groupValues1, groupValues2], {
       margin: {
         l: 40,
         r: 20,
@@ -255,14 +257,14 @@ class Dashboard extends Component {
         b: 30
       },
       xaxis: {
-        tickmode: 'auto',
-        type: 'date',
-        tickfont: {
-          size: 11
-        },
-        tickformat: '%b %d',
-        hoverformat: '%b %d, %H:%M',
-        nticks: 10
+        // tickmode: 'auto',
+        // type: 'date',
+        // tickfont: {
+        //   size: 11
+        // },
+        // tickformat: '%b %d',
+        // hoverformat: '%b %d, %H:%M',
+        // nticks: 10
       },
       yaxis: {
         title: this.valuesLabel[typeName],
@@ -341,6 +343,7 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state.auth);
   return {
     global: state.global,
     auth: state.auth,

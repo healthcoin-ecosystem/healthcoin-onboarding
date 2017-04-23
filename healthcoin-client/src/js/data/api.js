@@ -13,13 +13,13 @@ const timeout = (ms, promise) => {
   })
 }
 
-export const baseCall = (endPoint, method, payload, token = localStorage.token) => {
+export const baseCall = (endPoint, method, payload) => {
   return timeout(5000, fetch(`${apiHost}/${endPoint}`, {
     method,
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
-      "Authorization": `bearer ${token || ''}`
+      "Authorization": `bearer ${localStorage.token || ''}`
     },
     body: JSON.stringify(payload)
   }).then(response => response.json()))

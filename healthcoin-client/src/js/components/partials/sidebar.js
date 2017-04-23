@@ -25,8 +25,8 @@ class Sidebar extends Component {
         text: "your HDL level",
         value: "20%"
       },
-      "waist size": {
-        text: "an waist measurement",
+      "waist": {
+        text: "a waist measurement",
         value: "10%"
       },
       "blood pressure": {

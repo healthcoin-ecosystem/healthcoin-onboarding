@@ -15,9 +15,9 @@ import styles from './index.css'
 class BioHistory extends Component {
 
   componentWillMount() {
-    if (!this.props.auth.token) {
-      browserHistory.push('/sign-in')
-    }
+    //if (!this.props.auth.token) {
+    //  browserHistory.push('/sign-in')
+    //}
     const {markers} = this.props.marker
     if (!markers) {
       this.props.actions.getUserMarkerTypes()

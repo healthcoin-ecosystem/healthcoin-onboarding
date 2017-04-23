@@ -16,6 +16,10 @@ class DashboardHeader extends Component {
     browserHistory.push("/")
   }
 
+  resetDemo() {
+    this.props.actions.resetDemoBiodata();
+  }
+
   render() {
     const currentUser = this.props.currentUser || {}
     return (
@@ -29,6 +33,7 @@ class DashboardHeader extends Component {
               text={'Hi, ' + currentUser.firstname || ''}>
               <Dropdown.Menu>
                 <Dropdown.Item text='Account Settings'/>
+                <Dropdown.Item text='Reset Demo' onClick={this.resetDemo.bind(this)}/>
                 <Dropdown.Item text='Logout' onClick={this.signOut.bind(this)}/>
               </Dropdown.Menu>
             </Dropdown>

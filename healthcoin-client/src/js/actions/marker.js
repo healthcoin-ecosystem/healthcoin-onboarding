@@ -21,6 +21,24 @@ const failed = (json) => ({
   payload: json
 })
 
+export function resetDemoBiodata() {
+  return dispatch => {
+    return api.baseCall('biodata', 'POST', { demo: true })
+      .then(json => {
+        if (_.has(json, 'errors')) {
+          dispatch(failed(json))
+        } else {
+          //dispatch(echo(actions.ADDED_MARKER, json))
+          //dispatch(getUserMarkerTypes())
+        }
+        window.location = window.location;
+      })
+      .catch(json => {
+        dispatch(failed(json))
+      });
+  };
+}
+
 export const addMarker = (id, marker) => {
   return dispatch => {
     dispatch(requestAddMarker(marker))
