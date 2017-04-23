@@ -36,23 +36,20 @@ const before = {
 	all: [
 		hooks.verifyToken(),
 		hooks.populateUser(),
-		hooks.restrictToAuthenticated()
+		hooks.restrictToAuthenticated(),
+		hooks.softDelete()
 	],
 	find: [
-		hooks.queryWithCurrentUser({ as: 'userID' }),
-		hooks.softDelete()
+		hooks.queryWithCurrentUser({ as: 'userID' })
 	],
 	get: [
 		hooks.restrictToOwner({ ownerField: 'userID' })
 	],
 	create: [
-		// Allow internal service requests to create biodata
-		hooks.iff(
-			hooks.isProvider('external'),
-			hooks.restrictToOwner({ ownerField: 'userID' })
-		),
+		createDemoData,
 		hooks.associateCurrentUser({ as: 'userID' }),
-		hooks.setCreatedAt('created')
+		hooks.setCreatedAt('created'),
+		hooks.setUpdatedAt('updated')
 	],
 	update: [
 		hooks.restrictToOwner({ ownerField: 'userID' }),
@@ -63,8 +60,7 @@ const before = {
 		hooks.setUpdatedAt('updated')
 	],
 	remove: [
-		hooks.restrictToOwner({ ownerField: 'userID' }),
-		hooks.softDelete()
+		hooks.restrictToOwner({ ownerField: 'userID' })
 	]
 };
 
@@ -77,3 +73,11 @@ const after = {
 	patch: [],
 	remove: []
 };
+
+function createDemoData(hook) {
+	if (hook.data.demo === true || hook.data.demo == 'true') {
+		hook.data = require('../../demo/biodata');
+
+		return hook.service.remove(null, { query: { userID: hook.params.user._id }}).then(() => hook);
+	}
+}

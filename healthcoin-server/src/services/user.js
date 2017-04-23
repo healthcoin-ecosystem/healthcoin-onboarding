@@ -33,13 +33,14 @@ module.exports = function () {
 };
 
 const before = {
-	all: [],
+	all: [
+		hooks.softDelete()
+	],
 	find: [
 		hooks.verifyToken(),
 		hooks.populateUser(),
 		hooks.restrictToAuthenticated(),
-		hooks.queryWithCurrentUser({ as: '_id' }),
-		hooks.softDelete()
+		hooks.queryWithCurrentUser({ as: '_id' })
 	],
 	get: [
 		hooks.verifyToken(),
@@ -66,8 +67,7 @@ const before = {
 		hooks.verifyToken(),
 		hooks.populateUser(),
 		hooks.restrictToAuthenticated(),
-		hooks.restrictToOwner({ ownerField: '_id' }),
-		hooks.softDelete()
+		hooks.restrictToOwner({ ownerField: '_id' })
 	]
 };
 

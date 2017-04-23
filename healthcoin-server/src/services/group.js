@@ -36,19 +36,19 @@ const before = {
 	all: [
 		hooks.verifyToken(),
 		hooks.populateUser(),
-		hooks.restrictToAuthenticated()
+		hooks.restrictToAuthenticated(),
+		hooks.softDelete()
 	],
 	find: [
-		hooks.queryWithCurrentUser({ as: 'userID' }),
-		hooks.softDelete()
+		hooks.queryWithCurrentUser({ as: 'userID' })
 	],
 	get: [
 		hooks.restrictToOwner({ ownerField: 'userID' })
 	],
 	create: [
-		hooks.restrictToOwner({ ownerField: 'userID' }),
 		hooks.associateCurrentUser({ as: 'userID' }),
-		hooks.setCreatedAt('created')
+		hooks.setCreatedAt('created'),
+		hooks.setUpdatedAt('updated')
 	],
 	update: [
 		hooks.restrictToOwner({ ownerField: 'userID' }),
@@ -59,8 +59,7 @@ const before = {
 		hooks.setUpdatedAt('updated')
 	],
 	remove: [
-		hooks.restrictToOwner({ ownerField: 'userID' }),
-		hooks.softDelete()
+		hooks.restrictToOwner({ ownerField: 'userID' })
 	]
 };
 
