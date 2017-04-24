@@ -1,0 +1,53 @@
+@value colors: "../../../styles/colors.css";
+@value darkGray, gray, violet from colors;
+
+.bottom-label {
+  position: relative;
+  top: .4em;
+  float: left;
+  font-size: .9em;
+  color: darkGray;
+}
+
+.content {
+  padding: .3em .5em;
+}
+
+.meta {
+  font-size: .9em;
+  padding: 1em 0;
+  width:180px;
+  display: inline-block;
+}
+
+.header {
+  margin-top: .7em;
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.meta-header {
+  margin-top: .5em;
+  font-size: .7em;
+  font-weight: 200;
+}
+
+.card-extra-content {
+  text-align: center;
+  background-color: #f4f4f4 !important;
+}
+
+.img {
+  width: 64px;
+  float:right;
+  padding: 1em 0;
+}
+
+.description {
+  font-size: .7em;
+}
+
+.footer-text {
+  color: violet;
+}

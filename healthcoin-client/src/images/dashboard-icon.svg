@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="40px" viewBox="0 0 44 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_dashboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard---empty-state" transform="translate(-30.000000, -212.000000)" stroke="#222829">
+            <g id="left-nav" transform="translate(0.000000, 102.000000)">
+                <g id="btn_dashboard" transform="translate(31.000000, 111.000000)">
+                    <g id="ico_dashboard">
+                        <g id="_x31_1_x5F_dashboard_x5F_speed">
+                            <g id="Group">
+                                <g>
+                                    <circle id="Oval" cx="21" cy="21" r="2.03225806"></circle>
+                                    <path d="M35.9032258,35.9032258 L6.09677419,35.9032258 C2.32693548,32.1069677 0,26.7722903 0,21 C0,9.40190323 9.40190323,0 21,0 C32.5980968,0 42,9.40190323 42,21 C42,26.7716129 39.6710323,32.1069677 35.9032258,35.9032258 Z" id="Shape"></path>
+                                    <path d="M7.4516129,31.1633226 C5.32451613,28.3323871 4.06451613,24.8131935 4.06451613,21 C4.06451613,11.646871 11.646871,4.06451613 21,4.06451613 C30.353129,4.06451613 37.9354839,11.646871 37.9354839,21 C37.9354839,24.8125161 36.6761613,28.3303548 34.5497419,31.1612903" id="Shape"></path>
+                                    <path d="M21,31.1612903 L21,32.516129" id="Shape"></path>
+                                    <path d="M18,31.1612903 L18,32.516129" id="Shape"></path>
+                                    <path d="M23,31.1612903 L23,32.516129" id="Shape"></path>
+                                    <path d="M26,31.1612903 L26,32.516129" id="Shape"></path>
+                                    <path d="M15,31.1612903 L15,32.516129" id="Shape"></path>
+                                    <path d="M4.06451613,21 L6.09677419,21" id="Shape"></path>
+                                    <path d="M21,4.06451613 L21,6.09677419" id="Shape"></path>
+                                    <path d="M37.9354839,21 L35.9032258,21" id="Shape"></path>
+                                    <path d="M8.80645161,8.80645161 L10.8387097,10.8387097" id="Shape"></path>
+                                    <path d="M31.1612903,10.8387097 L33.1935484,8.80645161" id="Shape"></path>
+                                    <path d="M22.3548387,19.6451613 L29.1290323,12.8709677" id="Shape"></path>
+                                </g>
+                                <path d="M15.5806452,25.065871 C14.7298065,23.9332258 14.2258065,22.5255484 14.2258065,21 C14.2258065,17.2592903 17.2586129,14.2258065 21,14.2258065 C24.7413871,14.2258065 27.7741935,17.2592903 27.7741935,21 C27.7741935,22.524871 27.2701935,23.931871 26.4200323,25.0645161" id="Shape"></path>
+                                <path d="M7.4516129,38 L34.5483871,38" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

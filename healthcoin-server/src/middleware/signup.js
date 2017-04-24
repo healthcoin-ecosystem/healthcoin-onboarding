@@ -4,10 +4,10 @@ const recaptcha = require('./recaptcha');
 
 module.exports = app => {
 	return (req, res, next) => {
-		recaptcha.verify(req, err => {
-			if (err) {
-				return res.redirect('/signup');
-			}
+		//recaptcha.verify(req, err => {
+		//	if (err) {
+		//		return res.redirect('/signup');
+		//	}
 
 			const body = req.body;
 
@@ -21,13 +21,19 @@ module.exports = app => {
 			app.service('users').create(user, (err, user) => {
 				if (err) { return next(err); }
 
-				const siteUrl = getSiteUrl(req);
+				const biodata = generateInitialBiodataForUser(user);
 
-				sendWelcomeMessage(app.service('messages'), user._id, user.email, siteUrl);
+				app.service('biodata').create(biodata, (err, biodata) => {
+					if (err) { return next(err); }
 
-				res.redirect('/dashboard');
+					const siteUrl = getSiteUrl(req);
+
+					sendWelcomeMessage(app.service('messages'), user._id, user.email, siteUrl);
+
+					res.redirect('/users/' + user._id);
+				});
 			});
-		});
+		//});
 	};
 };
 
@@ -61,4 +67,21 @@ function sendWelcomeMessage(messageService, userID, email, siteUrl, callback) {
 
 		mail.store(messageService, userID, message, info, err => callback ? callback(err) : null);
 	});
+}
+
+function generateInitialBiodataForUser(user) {
+	const now = new Date();
+
+	const biodata = type => ({
+		userID: user._id, type: type, data: [], created: now, modified: now
+	});
+
+	return [
+		biodata('a1c'),
+		biodata('waist'),
+		biodata('systolic'),
+		biodata('diastolic'),
+		biodata('hdl'),
+		biodata('triglycerides')
+	];
 }

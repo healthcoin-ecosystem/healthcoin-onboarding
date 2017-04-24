@@ -1,0 +1,102 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20em;
+  padding: 2em 1.5em 0;
+  background-color: #fff;
+}
+
+.menus {
+  margin-bottom: 1em;
+}
+
+.dashboard-menu, .coins-menu, .history-menu {
+  display: block;
+  padding: 1.5em 0 1.5em 70px;
+  opacity: .7;
+  font-size: 1.3em;
+}
+
+.dashboard-menu:hover,
+.coins-menu:hover,
+.history-menu:hover {
+  opacity: 1;
+  color: #000;
+}
+
+.active.dashboard-menu,
+.active.coins-menu,
+.active.history-menu {
+  opacity: 1;
+  font-weight: 600;
+  color: #000;
+}
+
+.dashboard-menu {
+  background: #fff url('../../../images/dashboard-icon.svg') no-repeat 5px;
+}
+
+.coins-menu {
+  background: #fff url('../../../images/coins-icon.svg') no-repeat 5px;
+}
+
+.history-menu {
+  background: #fff url('../../../images/history-icon.svg') no-repeat 5px;
+}
+
+.add-bio-data-modald {
+  padding: 2em 3em;
+}
+
+#header {
+  padding: 2em 0 1.5em;
+  text-align: center;
+  border: none;
+}
+
+#input {
+  width: 25em;
+}
+
+.sub-header {
+  font-weight: 200;
+  margin-top:1em;
+}
+
+.note {
+  margin: 2em 0;
+  font-size: 12px;
+}
+
+#content {
+  padding: 0 3em;
+}
+
+#earned-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.content {
+  padding: 2em;
+  border: 1px solid #ccc;
+}
+
+.upload {
+  padding: 1em 0 1.5em;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#upload-img {
+  margin: 2em auto;
+}
+
+.line {
+  margin: .5em 0;
+}
+
+#actions {
+  padding: 2em 3em;
+}

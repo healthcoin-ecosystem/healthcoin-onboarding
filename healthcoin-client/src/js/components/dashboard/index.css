@@ -1,0 +1,25 @@
+@value colors: "../../../styles/colors.css";
+@value violet, lightGray from colors;
+
+.content {
+  position: relative;
+  background-color: lightGray;
+  min-height: 46em;
+}
+
+.card {
+  padding: 2em;
+}
+
+.dashboard {
+  padding: 2em 0 2em 22em;
+}
+
+.cards {
+  justify-content: space-between;
+}
+
+#graph-area {
+  margin: 2em 0 0 0;
+  min-height: 400px;
+}

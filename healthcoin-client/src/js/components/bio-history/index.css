@@ -1,0 +1,46 @@
+.content {
+  position: relative;
+  min-height: 46em;
+}
+
+.history {
+  padding: 2em 0 2em 22em;
+}
+
+#history {
+  padding: 2em 2em 2em 1.5em;
+}
+
+#title {
+  font-weight: 200;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2.5 !important;
+}
+
+.title {
+  width: 70%;
+}
+
+.date {
+  min-width: 12em;
+}
+
+.button {
+  min-width: 130px;
+  height: 2.5em !important;
+  margin: .5em 0 !important;
+}
+
+.first-entry {
+  border-top: 1px solid rgba(34,36,38,.15);
+  padding-top: .42857143em;
+}
+
+.last-entry {
+  border-bottom: 1px solid rgba(34,36,38,.15);
+  padding-bottom: .42857143em;
+}

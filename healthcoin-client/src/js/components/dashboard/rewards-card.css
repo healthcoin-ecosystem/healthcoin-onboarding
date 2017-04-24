@@ -1,0 +1,37 @@
+@value colors: "../../../styles/colors.css";
+@value gray, darkGray from colors;
+
+.header .meta-header {
+  margin-top: .7em;
+  font-size: .7em;
+  font-weight: 200;
+}
+
+.content {
+  padding: .3em .5em 1.5em;
+}
+
+.meta {
+  font-size: .9em;
+  padding: 1em 0 0;
+}
+
+.card-extra-content {
+  text-align: center;
+  background-color: #f4f4f4 !important;
+}
+
+.fitbit-description {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: gray;
+}
+
+.bottom-label {
+  position: relative;
+  top: .4em;
+  float: left;
+  font-size: .9em;
+  color: darkGray;
+}
+

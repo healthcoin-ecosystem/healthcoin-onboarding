@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HealthScore</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.css"/>
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				margin: 3em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ui text container">
+			<form class="ui form" style="">
+				<div class="field">
+					<label>Gender</label>
+					<select class="ui dropdown" name="gender" autofocus>
+						<option>male</option>
+						<option>female</option>
+					</select>
+				</div>
+				<div class="three fields">
+					<div class="field">
+						<label>A1C</label>
+						<input name="a1c" value="7" autofocus/>
+					</div>
+					<div class="field">
+						<label>Triglycerides</label>
+						<input name="triglycerides" value="272"/>
+					</div>
+					<div class="field">
+						<label>HDL</label>
+						<input name="hdl" value="44"/>
+					</div>
+				</div>
+				<div class="three fields">
+					<div class="field">
+						<label>Systolic</label>
+						<input name="systolic" value="125"/>
+					</div>
+					<div class="field">
+						<label>Diastolic</label>
+						<input name="diastolic" value="80"/>
+					</div>
+					<div class="field">
+						<label>Waist</label>
+						<input name="waist" value="53"/>
+					</div>
+				</div>
+			</form>
+			<div style="text-align: center;">
+				<div style="font-size: 10em;" id="healthscore">0</div>
+				<div style="font-size: 2em;">HealthScore</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.js"></script>
+		<script src="dist/healthscore-browser.js"></script>
+		<script>
+			$('.ui.dropdown').dropdown();
+
+			function handleChange() {
+				const biodata = {
+					a1c: $('[name=a1c]').val(),
+					triglycerides: $('[name=triglycerides]').val(),
+					hdl: $('[name=hdl]').val(),
+					systolic: $('[name=systolic]').val(),
+					diastolic: $('[name=diastolic]').val(),
+					waist: $('[name=waist]').val(),
+					gender: $('[name=gender]').val(),
+				};
+
+				const score = healthscore(biodata);
+
+				$('#healthscore').text(score);
+			}
+
+			$('input').keyup(handleChange);
+			$('select').change(handleChange);
+			handleChange();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="42px" viewBox="0 0 45 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_rewards</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="admin---groups" transform="translate(-29.000000, -156.000000)" stroke="#A7A9AA">
+            <g id="left-nav" transform="translate(0.000000, 102.000000)">
+                <g id="btn_rewards" transform="translate(30.000000, 55.000000)">
+                    <g id="ico_rewards">
+                        <g id="Group">
+                            <g>
+                                <g>
+                                    <path d="M7.62903226,5.51724138 L19.4193548,24.8275862" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M0,5.51724138 L14.5645161,28.9655172" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M35.3709677,5.51724138 L23.5806452,24.8275862" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M43,5.51724138 L28.4354839,28.9655172" id="Shape" stroke-linejoin="round"></path>
+                                    <polygon id="Shape" stroke-linejoin="round" points="43 5.51724138 0 5.51724138 4.16129032 0 38.8387097 0"></polygon>
+                                    <ellipse id="Oval" stroke-linejoin="round" cx="21.5" cy="32.4137931" rx="7.62903226" ry="7.5862069"></ellipse>
+                                    <polyline id="Shape" points="20.1129032 30.3448276 21.5 30.3448276 21.5 35.1724138"></polyline>
+                                    <path d="M20.8064516,11 L22.1935484,11" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M23.5806452,11 L24.9677419,11" id="Shape" stroke-linejoin="round"></path>
+                                    <path d="M18.0322581,11 L19.4193548,11" id="Shape" stroke-linejoin="round"></path>
+                                    <ellipse id="Oval" stroke-linejoin="round" cx="21.5" cy="32.4137931" rx="4.85483871" ry="4.82758621"></ellipse>
+                                </g>
+                                <path d="M2.77419355,2 L40.2258065,2" id="Shape" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M26.3548387,26.2068966 L38.8387097,6.20689655" id="Shape" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M16.6451613,26.2068966 L4.16129032,6.20689655" id="Shape" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
