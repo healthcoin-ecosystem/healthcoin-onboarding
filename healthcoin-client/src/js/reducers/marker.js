@@ -33,6 +33,16 @@ export default function auth(state = initialState, action) {
         markers: action.payload.data,
         history: action.payload.history
       })
+    case actions.REQUEST_COHORT_MARKER_TYPES:
+      return Object.assign({}, state, {
+        isProcessing: true
+      })
+    case actions.GOT_COHORT_MARKER_TYPES:
+      return Object.assign({}, state, {
+        isProcessing: false,
+        cohortMarkers: action.payload.data,
+        history: action.payload.history
+      })
     case actions.CLEANUP_MARKERS:
       return initialState
     default:

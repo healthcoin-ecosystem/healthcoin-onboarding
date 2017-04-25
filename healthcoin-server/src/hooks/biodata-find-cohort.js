@@ -24,10 +24,13 @@ function findCohort(hook, next) {
 		hook.app.service('biodata').find({ query }, (err, result) => {
 			if (err) { return next(err); }
 
-			const aggregatedBiodata = aggregateBiodata(result.data, 'month');
+			const aggregatedBiodata = aggregateBiodata(result.data, 'year');
 
 			hook.result = {
-				page: aggregatedBiodata
+				total: aggregatedBiodata.length,
+				limit: null,
+				skip: 0,
+				data: aggregatedBiodata
 			};
 
 			next();
@@ -50,7 +53,7 @@ function aggregateBiodata(biodata, interval) {
 		return { type: key, data: data };
 	});
 
-	return aggregateBiodata;
+	return aggregatedBiodata;
 }
 
 function interpolate(data, interval) {

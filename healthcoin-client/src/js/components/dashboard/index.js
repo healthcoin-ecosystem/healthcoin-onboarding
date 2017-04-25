@@ -79,58 +79,24 @@ class Dashboard extends Component {
     const {markers} = this.props.marker
     if (!markers) {
       this.props.actions.getUserMarkerTypes()
-    }
-  }
-
-  generateGroupData(data, type) {
-    return [];
-
-    const min = this.dataLimits[type][0];
-    const max = this.dataLimits[type][1];
-
-    if(type === 'blood pressure') {
-      const mins = min.split('/').map(num => parseInt(num));
-      const maxs = max.split('/').map(num => parseInt(num));
-      const avgs = [(maxs[0] + mins[0]) / 2, (maxs[1] + mins[1]) / 2];
-
-      return data.map(d => {
-        const nums = d.value.toString().split('/').map(num => parseInt(num));
-
-        let value = (nums[0] < mins[0] ? mins[0] : (nums[0] > maxs[0] ? maxs[0] : avgs[0]));
-        if(nums.length > 1) {
-          value += '/' + (nums[1] < mins[1] ? mins[1] : (nums[1] > maxs[1] ? maxs[1] : avgs[1]));
-        }
-
-        return {
-          date: d.date,
-          value
-        };
-      });
-    }
-    else {
-      const avg = (max + min) / 2;
-
-      return data.map(d => ({
-        date: d.date,
-        value: d.value < min ? min : (d.value > max ? max : avg)
-      }));
+      this.props.actions.getCohortMarkerTypes()
     }
   }
 
   onPlotMount() {
-    const {markers} = this.props.marker;
-    if(!markers) {
-      return
-    }
+    const { markers, cohortMarkers } = this.props.marker;
+
+    if (!markers || !cohortMarkers) { return; }
 
     const marker = markers.find(m => m._id === this.state.type.value);
+    const cohortMarker = cohortMarkers.find(m => m.type == this.state.type.key);
 
-    if(!marker) {
-      return;
-    }
+    if (!marker || !cohortMarker) { return; }
 
     const data = marker.data || [];
-    const {type} = this.state;
+    const cohortData = cohortMarker.data || [];
+
+    const { type } = this.state;
     const typeName = type.text.toLowerCase();
 
     let values1 = {
@@ -179,9 +145,8 @@ class Dashboard extends Component {
       badges1.x = [values1.x[data.length - 2]];
     }
 
-    const groupData = this.generateGroupData(data, typeName);
     let groupValues1 = {
-      x: groupData.map(d => d.date).sort(),
+      x: cohortData.map(d => d.date).sort(),
       type: this.plotTypes[typeName],
       hoverinfo: 'x+name+y+text',
       showlegend: true,
@@ -222,7 +187,7 @@ class Dashboard extends Component {
       groupValues2.y = [];
       groupValues2.name = 'Cohort\'s Diastolic';
 
-      groupData.forEach(d => {
+      cohortData.forEach(d => {
         const nums = d.value.toString().split('/');
         groupValues1.y.push(nums[0]);
 
@@ -245,7 +210,7 @@ class Dashboard extends Component {
         badges1.y = [values1.y[data.length - 2]];
       }
 
-      groupValues1.y = groupData.map(d => d.value);
+      groupValues1.y = cohortData.map(d => d.value);
       groupValues1.name = 'Cohort\'s ' + this.state.type.text;
     }
 
@@ -343,7 +308,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.auth);
   return {
     global: state.global,
     auth: state.auth,
