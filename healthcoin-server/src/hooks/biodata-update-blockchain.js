@@ -4,6 +4,8 @@ const config = require('config');
 const blockchain = require('../blockchain');
 
 function updateBlockchain(hook, next) {
+	if (!hook.params.user || !hook.result || !hook.result.type || !hook.result.data) { return next(); }
+
 	const amount = 30;
 	const userID = hook.params.user._id;
 	const result = hook.result;
