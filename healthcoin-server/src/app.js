@@ -27,20 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.configure(hooks());
 app.configure(rest());
 app.configure(services);
-app.use([
-	'/',
-	'/dashboard',
-	'/sign-in',
-	'/sign-up',
-	'/init',
-	'/coins',
-	'/bio-history',
-	'/admin/sign-in',
-	'/admin',
-	'/admin/groups',
-	'/admin/groups/:id',
-	'/404'
-], feathers.static(path.join(__dirname, config.get('public'), 'index.html')));
+app.use('/*', feathers.static(path.join(__dirname, config.get('public'), 'index.html')));
 app.configure(middleware);
 
 module.exports = app;
