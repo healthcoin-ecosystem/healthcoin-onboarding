@@ -23,6 +23,10 @@ module.exports = {
 		connectionVerify: false,
 		from: ''
 	},
+	blockchain: {
+		connectionString: '',
+		destination: ''
+	},
 	imageUpload: {
 		fileStore: {
 			path: './public/files',

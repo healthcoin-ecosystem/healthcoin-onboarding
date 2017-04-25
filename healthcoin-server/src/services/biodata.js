@@ -73,7 +73,11 @@ const after = {
 	find: [],
 	get: [],
 	create: [],
-	update: [],
-	patch: [],
+	update: [
+		hooks.biodataUpdateBlockchain()
+	],
+	patch: [
+		hooks.biodataUpdateBlockchain()
+	],
 	remove: []
 };
