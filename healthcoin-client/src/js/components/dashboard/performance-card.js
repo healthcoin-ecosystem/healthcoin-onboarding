@@ -15,7 +15,10 @@ class PerformanceCard extends Component {
     this.state = {
       sliderIndex: 0,
       sliderOptions: Object.assign({}, sliderOptions, {dots: false, arrows: false}),
-      pfizerShared: false
+      pfizerShared: false,
+      you: 4,
+      cohort: 48,
+      average: 30
     }
   }
 
@@ -32,13 +35,14 @@ class PerformanceCard extends Component {
   }
 
   componentWillReceiveProps(props) {
-    // if(props.marker.marker) {
-    //   this.setState({
-    //     sliderOptions: Object.assign({}, this.state.sliderOptions, {dots: true, arrows: true}),
-    //     pfizerShared: false
-    //   });
-    //   this.refs.slider.slickGoTo(1)
-    // }
+    if(props.marker.marker) {
+      this.setState({
+        you: 34
+        //sliderOptions: Object.assign({}, this.state.sliderOptions, {dots: true, arrows: true}),
+        //pfizerShared: false
+      });
+      //this.refs.slider.slickGoTo(1)
+    }
   }
 
   render() {
@@ -69,14 +73,16 @@ class PerformanceCard extends Component {
                 </Card.Header>
                 <Card.Description className="text-center">
                   <svg className={styles.youVsCohort}>
-                    <text x="83" y="115">4</text>
-                    <text x="163" y="35">48</text>
-                    <text x="6" y="75">AVG</text>
-                    <text x="220" y="75">42</text>
-                    <rect x="55" y="120" fill="#614baf" width="64" height="20"/>
-                    <rect x="139" y="40" fill="#a98fe1" width="64" height="100"/>
+                    <rect x="55" y={140 - (this.state.you * 2)} fill="#614baf" width="64" height={this.state.you * 2}/>
+                    <rect x="139" y={140 - (this.state.cohort * 2)} fill="#a98fe1" width="64" height={this.state.cohort * 2}/>
                     <line x1="45" y1="140" x2="210" y2="140" strokeWidth="2" stroke="#333"/>
-                    <line x1="48" y1="70" x2="210" y2="70" strokeWidth="1" stroke="#333" strokeDasharray="5,6"/>
+                    <line x1="48" y1={140 - (this.state.average * 2)} x2="210" y2={140 - (this.state.average * 2)} strokeWidth="1" stroke="#333" strokeDasharray="5,6"/>
+                    <text x="6" y={145 - (this.state.average * 2)}>AVG</text>
+                    <text x="220" y={145 - (this.state.average * 2)}>{this.state.average}</text>
+                    <text x="80" y={130 - (this.state.you * 2)} strokeWidth="5" stroke="#fff">{this.state.you}</text>
+                    <text x="163" y={130 - (this.state.cohort * 2)} strokeWidth="5" stroke="#fff">{this.state.cohort}</text>
+                    <text x="80" y={130 - (this.state.you * 2)}>{this.state.you}</text>
+                    <text x="163" y={130 - (this.state.cohort * 2)}>{this.state.cohort}</text>
                     <text x="73" y="160">You</text>
                     <text x="150" y="160">Cohort</text>
                   </svg>
