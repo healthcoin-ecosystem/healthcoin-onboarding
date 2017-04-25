@@ -184,19 +184,19 @@ class Sidebar extends Component {
             <Grid columns="2" relaxed="very" stackable textAlign="center" verticalAlign="middle" padded>
               <Grid.Row>
                 <Grid.Column style={{ maxWidth: 330 }}>
-                  <div style={{ color: '#5b5' }}><span style={{ fontSize: '1em', verticalAlign: 'middle' }}>&#9660;</span> <span style={{ fontSize: '4em', verticalAlign: 'middle' }}>2</span></div>
+                  <div style={{ color: '#5b5' }}><span style={{ fontSize: '1em', verticalAlign: 'middle' }}>&#9660;</span> <span style={{ fontSize: '4em', verticalAlign: 'middle' }}>.837</span></div>
                   <h3>Improved A1C Level</h3>
                   <List bulleted style={{ textAlign: 'left' }}>
-                    <List.Item>You lowered your A1C by 2 points.</List.Item>
+                    <List.Item>You lowered your A1C by .837 points.</List.Item>
                     <List.Item>You entered results twice in 6 months.</List.Item>
                     <List.Item>Click below to see your A1C history.</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column style={{ maxWidth: 330 }}>
-                  <div style={{ color: '#5b5' }}><span style={{ fontSize: '2em', verticalAlign: 'middle', fontWeight: 'bold' }}>+</span> <span style={{ fontSize: '4em', verticalAlign: 'middle' }}>5</span></div>
+                  <div style={{ color: '#5b5' }}><span style={{ fontSize: '2em', verticalAlign: 'middle', fontWeight: 'bold' }}>+</span> <span style={{ fontSize: '4em', verticalAlign: 'middle' }}>30</span></div>
                   <h3>Healthcoins Earned</h3>
                   <List bulleted style={{ textAlign: 'left' }}>
-                    <List.Item>You have earned 7 coins in 7 days.</List.Item>
+                    <List.Item>You have earned 30 coins in 7 days.</List.Item>
                     <List.Item>Enter more bio-data to earn more.</List.Item>
                     <List.Item>Go to your Dashboard for more ways to earn Healthcoins.</List.Item>
                   </List>
