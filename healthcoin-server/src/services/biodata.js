@@ -40,13 +40,17 @@ const before = {
 		hooks.softDelete()
 	],
 	find: [
-		hooks.queryWithCurrentUser({ as: 'userID' })
+		hooks.biodataFindCohort(),
+		hooks.iff(
+			hooks.isProvider('external'),
+			hooks.queryWithCurrentUser({ as: 'userID' })
+		)
 	],
 	get: [
 		hooks.restrictToOwner({ ownerField: 'userID' })
 	],
 	create: [
-		createDemoData,
+		hooks.biodataCreateDemo(),
 		hooks.associateCurrentUser({ as: 'userID' }),
 		hooks.setCreatedAt('created'),
 		hooks.setUpdatedAt('updated')
@@ -73,11 +77,3 @@ const after = {
 	patch: [],
 	remove: []
 };
-
-function createDemoData(hook) {
-	if (hook.data.demo === true || hook.data.demo == 'true') {
-		hook.data = require('../../demo/biodata');
-
-		return hook.service.remove(null, { query: { userID: hook.params.user._id }}).then(() => hook);
-	}
-}
