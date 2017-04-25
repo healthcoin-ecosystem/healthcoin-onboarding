@@ -25,7 +25,8 @@ module.exports = {
 	},
 	blockchain: {
 		connectionString: '',
-		destination: ''
+		destination: '',
+		secret: ''
 	},
 	imageUpload: {
 		fileStore: {
