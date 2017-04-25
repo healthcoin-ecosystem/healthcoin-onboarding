@@ -3,8 +3,10 @@
 const feathersHooks = require('feathers-hooks');
 const feathersHooksCommon = require('feathers-hooks-common');
 const feathersAuthenticationHooks = require('feathers-authentication').hooks;
+const biodataFindCohort = require('./biodata-find-cohort');
+const biodataCreateDemo = require('./biodata-create-demo');
 
-module.exports = Object.assign({},
+module.exports = Object.assign({ biodataFindCohort, biodataCreateDemo },
 	feathersHooks,
 	feathersHooksCommon,
 	feathersAuthenticationHooks
