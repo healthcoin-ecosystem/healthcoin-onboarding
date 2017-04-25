@@ -17,8 +17,7 @@ class PerformanceCard extends Component {
       sliderOptions: Object.assign({}, sliderOptions, {dots: false, arrows: false}),
       pfizerShared: false,
       you: 4,
-      cohort: 48,
-      average: 30
+      cohort: 48
     }
   }
 
@@ -76,9 +75,6 @@ class PerformanceCard extends Component {
                     <rect x="55" y={140 - (this.state.you * 2)} fill="#614baf" width="64" height={this.state.you * 2}/>
                     <rect x="139" y={140 - (this.state.cohort * 2)} fill="#a98fe1" width="64" height={this.state.cohort * 2}/>
                     <line x1="45" y1="140" x2="210" y2="140" strokeWidth="2" stroke="#333"/>
-                    <line x1="48" y1={140 - (this.state.average * 2)} x2="210" y2={140 - (this.state.average * 2)} strokeWidth="1" stroke="#333" strokeDasharray="5,6"/>
-                    <text x="6" y={145 - (this.state.average * 2)}>AVG</text>
-                    <text x="220" y={145 - (this.state.average * 2)}>{this.state.average}</text>
                     <text x="80" y={130 - (this.state.you * 2)} strokeWidth="5" stroke="#fff">{this.state.you}</text>
                     <text x="163" y={130 - (this.state.cohort * 2)} strokeWidth="5" stroke="#fff">{this.state.cohort}</text>
                     <text x="80" y={130 - (this.state.you * 2)}>{this.state.you}</text>
