@@ -1,13 +1,23 @@
 import React, { Component, PropTypes } from "react"
 import { browserHistory, Link } from 'react-router'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Grid, Button, Form, Divider } from 'semantic-ui-react'
+import * as authActions from '../../actions/auth'
 
 import styles from './index.css'
 const logo = require('../../../images/logo.png')
 
-export default class Landing extends Component {
+class Landing extends Component {
   componentWillMount() {
     document.body.style.backgroundColor = '#fff';
+  }
+
+  componentDidMount() {
+    const { token } = this.props.auth;
+    if (token) {
+      browserHistory.push('/dashboard')
+    }
   }
 
   componentWillUnount() {
@@ -50,3 +60,22 @@ export default class Landing extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    global: state.global,
+    auth: state.auth
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(authActions, dispatch),
+    dispatch
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Landing)

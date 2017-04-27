@@ -28,15 +28,22 @@ class SignIn extends Component {
     }
   }
 
+  componentDidMount() {
+    const { token } = this.props.auth;
+    if (token) {
+      browserHistory.push('/dashboard')
+    }
+  }
+
   componentDidUpdate() {
     const {error, token, currentUser} = this.props.auth;
     if (token) {
-      if((currentUser.roles || []).find(role => role === 'admin')) {
-        browserHistory.push('/admin')
-      }
-      else {
+      // if((currentUser.roles || []).find(role => role === 'admin')) {
+      //   browserHistory.push('/admin')
+      // }
+      // else {
         browserHistory.push('/dashboard')
-      }
+      // }
     }
     if (_.isObject(error) && !_.has(this.state.errors, 'api')) {
       this.setState({
