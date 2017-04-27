@@ -48,8 +48,8 @@ function aggregateBiodata(biodata, interval) {
 
 	const aggregatedBiodata = lodash.map(interpolatedBiodataByType, (interpolatedBiodataOfType, key) => {
 		const flatData = lodash.flatMap(interpolatedBiodataOfType, biodata => biodata.data);
-		const interpolatedBiodataByDate = lodash.groupBy(flatData, data => data.date);
-		const data = lodash.map(interpolatedBiodataByDate, (interpolatedBiodataOfDate, date) => ({ date: new Date(date), value: lodash.meanBy(interpolatedBiodataOfDate, data => data.value)}));
+		const interpolatedBiodataByDate = lodash.groupBy(flatData, data => data.date.getTime().toString());
+		const data = lodash.map(interpolatedBiodataByDate, (interpolatedBiodataOfDate, date) => ({ date: new Date(parseInt(date)), value: lodash.meanBy(interpolatedBiodataOfDate, data => data.value)}));
 		return { type: key, data: data };
 	});
 
@@ -57,6 +57,8 @@ function aggregateBiodata(biodata, interval) {
 }
 
 function interpolate(data, interval) {
+	if (data.length == 0) { return []; }
+
 	data = lodash.sortBy(data, data => data.date.getTime());
 	const start = lodash.first(data).date;
 	const end = lodash.last(data).date;

@@ -3,14 +3,14 @@ module.exports = {
 
 	dates: {
 		startRange: [ '2009-01-01', '2012-01-01' ],
-		endRange: [ '2017-03-01', '2017-04-01' ]
+		endRange: [ '2017-04-01', '2017-05-01' ]
 	},
 
 	// Minimum and maximum days between biodata samples
 	intervals: {
 		'a1c': {
 			min: 182,
-			max: 547
+			max: 447
 		},
 		'waist': {
 			min: 90,
@@ -22,7 +22,7 @@ module.exports = {
 		},
 		'hdl,triglycerides': {
 			min: 300,
-			max: 900
+			max: 600
 		}
 	},
 
@@ -292,7 +292,7 @@ module.exports = {
 			]
 		},
 
-		diastolic: [
+		systolic: [
 			// [ 100, 90 ],
 			// [ 100, 95 ],
 			// [ 100, 100 ],
@@ -329,7 +329,7 @@ module.exports = {
 			[ 0, 180 ],
 		],
 
-		systolic: [
+		diastolic: [
 			// [ 100, 60 ],
 			// [ 100, 65 ],
 			// [ 95, 70 ],

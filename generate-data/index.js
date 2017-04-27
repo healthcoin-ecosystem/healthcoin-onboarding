@@ -229,6 +229,8 @@ mongodb.MongoClient.connect(connectionString, (err, db) => {
 		const biodata = generateBiodata();
 
 		user.gender = biodata._gender;
+		user.group = null;
+		user.roles = [];
 		user.created = biodata._start;
 		user.modified = biodata._end;
 		user._healthscore = biodata._healthscore;
