@@ -6,6 +6,10 @@ import {sliderOptions} from '../../constants/slider-options'
 import styles from './clinical-trial-card.css'
 
 export default class ClinicalTrialCard extends Component {
+  state = {
+    sliderIndex: 0
+  }
+
   show() {
     this.setState({modalOn: true})
   }
@@ -14,13 +18,19 @@ export default class ClinicalTrialCard extends Component {
     this.setState({modalOn: false})
   }
 
+  slide(index) {
+    this.setState({
+      sliderIndex: index
+    });
+  }
+
   render() {
     const {modalOn} = this.state || {}
     return (
       <Card>
         <Card.Content>
           <div className={styles.content}>
-            <Slider {...sliderOptions} dots={false}>
+            <Slider {...sliderOptions} dots={false} afterChange={this.slide.bind(this)}>
               <div>
                 <Card.Header className="bold">
                   Your Health is in Your Hands
@@ -38,12 +48,37 @@ export default class ClinicalTrialCard extends Component {
                   <p>You are receiving this because you requested to receive "Clinical Trial Invitations". Adjust your <a href="#">settings here</a></p>
                 </Card.Description>
               </div>
+              <div>
+                <Card.Header className="bold">
+                  You've Earned Healthcoins
+                </Card.Header>
+                <Card.Meta>
+                  <div style={{ width: 80, height: 80, backgroundColor: '#175', color: '#efe', textAlign: 'center', lineHeight: 1, fontWeight: 600, borderBottomRightRadius: 10, borderBottomLeftRadius: 10, marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 16 }}>
+                    <div style={{ fontSize: 20, marginRight: 0, paddingTop: 12, color: '#9fa' }}>Green</div>
+                    <div style={{ fontSize: 20, marginRight: 0 }}>Basket</div>
+                    <div style={{ textTransform: 'uppercase', letterSpacing: 1, fontSize: 9, fontWeight: 400, marginTop: 5 }}>Market</div>
+                  </div>
+                  <p>
+                    We want to help you earn more with a 10%-off
+                    coupon for healthy items.
+                  </p>
+                </Card.Meta>
+              </div>
             </Slider>
           </div>
         </Card.Content>
         <Card.Content extra className={styles.cardExtraContent}>
-          <p className={styles.bottomLabel}>Clinical Trial Invitation</p>
-          <Button onClick={this.show.bind(this)} size="mini" floated="right">Learn More</Button>
+          {this.state.sliderIndex == 1 ? (
+            <div>
+              <p className={styles.bottomLabel}>Marketplace Incentives</p>
+              <Button size="mini" floated="right">Learn More</Button>
+            </div>
+          ) : (
+            <div>
+              <p className={styles.bottomLabel}>Clinical Trial Invitation</p>
+              <Button onClick={this.show.bind(this)} size="mini" floated="right">Learn More</Button>
+            </div>
+          )}
         </Card.Content>
         <Modal size="small" dimmer="inverted" open={modalOn} onClose={this.hide.bind(this)}>
           <Modal.Header className={styles.header}>
