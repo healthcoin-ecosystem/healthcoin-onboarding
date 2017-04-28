@@ -49,7 +49,7 @@ export const addMarker = (id, marker) => {
     return api.baseCall(`biodata/${id}`, 'GET')
       .then(json => {
         let newDataArray = [...json.data, marker]
-        return api.baseCall(`biodata/${id}`, 'PATCH', {data: newDataArray})
+        return api.baseCall(`biodata/${id}`, 'PATCH', { data: newDataArray })
           .then(json => {
             if (_.has(json, 'errors')) {
               dispatch(failed(json))
@@ -79,7 +79,8 @@ export const getUserMarkerTypes = () => {
               markers.push({
                 type: t.type,
                 value: marker.value,
-                date: new Date(marker.date)
+                date: new Date(marker.date),
+                verified: marker.verified
               })
             })
           })

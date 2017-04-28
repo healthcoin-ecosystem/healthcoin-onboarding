@@ -17,12 +17,12 @@ export default function auth(state = initialState, action) {
         marker: action.payload
       })
     case actions.FAILED:
-      return {
+      return Object.assign({}, state, {
         isProcessing: false,
         error: {
           message: action.payload.message
         }
-      }
+      })
     case actions.REQUEST_USER_MARKER_TYPES:
       return Object.assign({}, state, {
         isProcessing: true
@@ -41,7 +41,7 @@ export default function auth(state = initialState, action) {
       return Object.assign({}, state, {
         isProcessing: false,
         cohortMarkers: action.payload.data,
-        history: action.payload.history
+        cohortHistory: action.payload.history
       })
     case actions.CLEANUP_MARKERS:
       return initialState

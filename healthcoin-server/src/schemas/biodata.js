@@ -10,7 +10,8 @@ module.exports = new mongoose.Schema({
 	},
 	data: [{
 		date: { type: Date },
-		value: { type: Number }
+		value: { type: Number },
+		verified: { type: Boolean }
 	}],
 	created: {
 		type: Date,

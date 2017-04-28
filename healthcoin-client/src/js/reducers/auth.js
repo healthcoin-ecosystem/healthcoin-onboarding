@@ -41,12 +41,12 @@ export default function auth(state = initialState, action) {
         currentUser: null
       })
     case FAILED:
-      return {
+      return Object.assign({}, state, {
         isProcessing: false,
         error: {
           message: action.payload.message
         }
-      }
+      })
     case CLEAR_ERROR_MESSAGES:
       return Object.assign({}, state, {
         error: null
