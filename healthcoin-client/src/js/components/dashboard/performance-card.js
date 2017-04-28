@@ -34,13 +34,18 @@ class PerformanceCard extends Component {
   }
 
   componentWillReceiveProps(props) {
-    if(props.marker.marker) {
+    const marker = props.marker;
+    if (marker.marker) {
       this.setState({
         you: 34
         //sliderOptions: Object.assign({}, this.state.sliderOptions, {dots: true, arrows: true}),
         //pfizerShared: false
       });
       //this.refs.slider.slickGoTo(1)
+    }
+    if (marker && marker.history &&
+      marker.history.length && marker.history.some(d => d.verified != true)) {
+      this.setState({ you: 34 });
     }
   }
 
@@ -60,7 +65,6 @@ class PerformanceCard extends Component {
         <Button size="mini" floated="right" onClick={this.pfizerUpdate.bind(this)}>{pfizerButton}</Button>
        </div>),*/
     ][sliderIndex];
-
     return (
       <Card>
         <Card.Content>
