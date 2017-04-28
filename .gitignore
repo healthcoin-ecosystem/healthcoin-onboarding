@@ -58,3 +58,5 @@ typings/
 .env
 
 healthcoin-client/dist/
+
+healthcoin-server/config/local.js
