@@ -14,6 +14,16 @@ import styles from './index.css'
 
 class BioHistory extends Component {
 
+  labels = {
+    'a1c': 'A1C',
+    'triglycerides': 'Triglycerides',
+    'hdl': 'HDL',
+    'waist': 'Waist',
+    'blood pressure': 'Blood Pressure',
+    'systolic': 'Systolic',
+    'diastolic': 'Diastolic'
+  };
+
   componentWillMount() {
     //if (!this.props.auth.token) {
     //  browserHistory.push('/sign-in')
@@ -35,7 +45,7 @@ class BioHistory extends Component {
       return (
         <List.Item key={index}>
           <List.Content className={styles.entry + ' ' + styles[firstOrLastEntry]}>
-            <div className={styles.title}>Added {bio.type} : {bio.value}</div>
+            <div className={styles.title}>Added <span style={{ fontWeight: '600' }}>{this.labels[bio.type] || bio.type}</span>: {bio.value}</div>
             <div className={styles.date}>{_.startCase(_.toLower(moment(bio.date).from(now)))}</div>
             <Button
               className={styles.button}

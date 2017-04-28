@@ -46,7 +46,7 @@ class Coins extends Component {
         value: '5.6%',
         createdDate: moment([2015, 3, 2])
       }, {
-        title: 'Trigylcerides',
+        title: 'Triglycerides',
         value: '207',
         createdDate: moment([2015, 1, 5])
       }, {
@@ -71,7 +71,7 @@ class Coins extends Component {
         value: '5.6%',
         createdDate: moment([2016, 3, 2])
       }, {
-        title: 'Trigylcerides',
+        title: 'Triglycerides',
         value: '207',
         createdDate: moment([2016, 1, 5])
       }, {
@@ -96,7 +96,7 @@ class Coins extends Component {
         value: '5.6%',
         createdDate: moment([2017, 3, 2])
       }, {
-        title: 'Trigylcerides',
+        title: 'Triglycerides',
         value: '207',
         createdDate: moment([2017, 1, 5])
       }]
@@ -122,7 +122,7 @@ class Coins extends Component {
         value: '5.6%',
         createdDate: moment([2017, 3, 2])
       }, {
-        title: 'Trigylcerides',
+        title: 'Triglycerides',
         value: '207',
         createdDate: moment([2017, 1, 5])
       }, {

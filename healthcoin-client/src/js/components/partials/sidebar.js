@@ -12,12 +12,22 @@ class Sidebar extends Component {
   constructor(props) {
     super(props);
 
+    this.labels = {
+      'a1c': 'A1C',
+      'triglycerides': 'Triglycerides',
+      'hdl': 'HDL',
+      'waist': 'Waist',
+      'blood pressure': 'Blood Pressure',
+      'systolic': 'Systolic',
+      'diastolic': 'Diastolic'
+    };
+
     this.typeLabels = {
       "a1c": {
         text: "A1C bio-data",
         value: "50%"
       },
-      "trigylcerides": {
+      "triglycerides": {
         text: "your triglyceride level",
         value: "5%"
       },
@@ -107,7 +117,7 @@ class Sidebar extends Component {
     const markers = this.props.marker.markers || []
     const bioTypes = markers.map(m => ({
       key: m.type,
-      text: m.type,
+      text: this.labels[m.type] || m.type,
       value: m._id
     }))
     return (
