@@ -30,7 +30,7 @@ module.exports = app => {
 
 					sendWelcomeMessage(app.service('messages'), user._id, user.email, siteUrl);
 
-					res.redirect('/users/' + user._id);
+					res.send(user);
 				});
 			});
 		//});
