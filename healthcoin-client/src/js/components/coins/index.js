@@ -19,9 +19,9 @@ class Coins extends Component {
   }
 
   componentWillMount() {
-    //if (!this.props.auth.token) {
-    //  browserHistory.push('/sign-in')
-    //}
+    if (!localStorage.token) {
+      window.location = '/sign-in';
+    }
   }
 
   toggleBioData(index) {
