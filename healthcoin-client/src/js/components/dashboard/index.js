@@ -19,34 +19,40 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
 
+    this.labels = {
+      'a1c': 'A1C',
+      'triglycerides': 'Triglycerides',
+      'hdl': 'HDL',
+      'waist': 'Waist',
+      'blood pressure': 'Blood Pressure',
+      'systolic': 'Systolic',
+      'diastolic': 'Diastolic'
+    };
     this.valuesLabel = {
       'a1c': 'Blood Glucose Level',
-      'trigylcerides': 'Triglyceride Level',
-      'hdl': 'HDL Levels',
-      'waist': 'Inches',
-      'blood pressure': 'Systolic / Diastolic pressure'
+      'triglycerides': 'Triglyceride Level',
+      'hdl': 'HDL Level',
+      'waist': 'Waist Inches',
+      'blood pressure': 'Systolic / Diastolic Blood Pressure',
+      'systolic': 'Systolic Blood Pressure',
+      'diastolic': 'Diastolic Blood Pressure'
     };
     this.plotTypes = {
       'a1c': 'area',
-      'trigylcerides': 'area',
+      'triglycerides': 'area',
       'hdl': 'area',
       'waist': 'area',
-      'blood pressure': 'area'
+      'blood pressure': 'area',
+      'systolic': 'area',
+      'diastolic': 'area'
     };
     this.showBadges = {
       'a1c': true,
-      'trigylcerides': true,
+      'triglycerides': true,
       'hdl': true,
       'waist': true,
       'blood pressure': false
     };
-    this.dataLimits = {
-      'a1c': [4, 6],
-      'trigylcerides': [140, 160],
-      'hdl': [60, 150],
-      'waist': [30, 40],
-      'blood pressure': ['120/90', '170/130']
-    }
 
     this.state = {
       type: {},
@@ -58,7 +64,7 @@ class Dashboard extends Component {
     if(markers) {
       const types = markers.map(m => ({
         key: m.type,
-        text: m.type,
+        text: this.labels[m.type] || m.type,
         value: m._id
       }));
 
@@ -258,7 +264,7 @@ class Dashboard extends Component {
       const markers = props.marker.markers || [];
       const types = markers.map(m => ({
         key: m.type,
-        text: m.type,
+        text: this.labels[m.type] || m.type,
         value: m._id
       }));
 

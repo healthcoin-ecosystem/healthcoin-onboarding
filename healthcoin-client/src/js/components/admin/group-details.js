@@ -42,7 +42,7 @@ class AdminGroupDetails extends Component {
         'value': '5.6%',
         'createdDate': moment([2017, 2, 9])
       }, {
-        'title': 'Trigylcerides',
+        'title': 'Triglycerides',
         'value': '27',
         'createdDate': moment([2017, 3, 15])
       }, {
