@@ -25,9 +25,9 @@ class BioHistory extends Component {
   };
 
   componentWillMount() {
-    //if (!this.props.auth.token) {
-    //  browserHistory.push('/sign-in')
-    //}
+    if (!localStorage.token) {
+      window.location = '/sign-in';
+    }
     const {markers} = this.props.marker
     if (!markers) {
       this.props.actions.getUserMarkerTypes()
