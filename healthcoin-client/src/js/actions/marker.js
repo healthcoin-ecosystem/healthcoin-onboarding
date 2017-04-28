@@ -35,7 +35,7 @@ export function resetDemoBiodata() {
           //dispatch(echo(actions.ADDED_MARKER, json))
           //dispatch(getUserMarkerTypes())
         }
-        window.location = window.location;
+        setTimeout(() => window.location.reload(true), 500);
       })
       .catch(json => {
         dispatch(failed(json))
