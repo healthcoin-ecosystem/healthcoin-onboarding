@@ -11,7 +11,7 @@
 			"program": "${workspaceRoot}/src/index.js",
 			"cwd": "${workspaceRoot}",
 			"env": {
-				"DEBUG": "*"
+				//"DEBUG": "*"
 			}
 		},
 		{

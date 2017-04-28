@@ -37,7 +37,7 @@ const before = {
 		hooks.verifyToken(),
 		hooks.populateUser(),
 		hooks.restrictToAuthenticated(),
-		hooks.softDelete()
+		//hooks.softDelete()
 	],
 	find: [
 		hooks.biodataFindCohort(),
