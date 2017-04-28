@@ -24,23 +24,31 @@ class Sidebar extends Component {
 
     this.typeLabels = {
       "a1c": {
-        text: "A1C bio-data",
+        text: "Your A1C level",
         value: "50%"
       },
       "triglycerides": {
-        text: "your triglyceride level",
+        text: "Your triglyceride level",
         value: "5%"
       },
       "hdl": {
-        text: "your HDL level",
+        text: "Your HDL level",
         value: "20%"
       },
       "waist": {
-        text: "a waist measurement",
+        text: "Your waist measurement",
         value: "10%"
       },
+      "systolic": {
+        text: "Your blood pressure",
+        value: "15%"
+      },
+      "diastolic": {
+        text: "Your blood pressure",
+        value: "15%"
+      },
       "blood pressure": {
-        text: "your blood pressure level",
+        text: "Your blood pressure",
         value: "15%"
       }
     };
@@ -164,7 +172,7 @@ class Sidebar extends Component {
                 autoFocus/>
               <p className={styles.note}>
                 <strong>Note: </strong>
-                {this.state.typeLabel && this.state.typeLabel.text} accounts for {this.state.typeLabel && this.state.typeLabel.value} of your overall health score
+                {this.state.typeLabel && this.state.typeLabel.text} accounts for {this.state.typeLabel && this.state.typeLabel.value} of your overall health score.
               </p>
               <div className={styles.upload}>
                 <Image src="../../../images/upload.png" id={styles.uploadImg}></Image>
